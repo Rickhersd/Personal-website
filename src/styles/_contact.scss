@@ -1,0 +1,288 @@
+@use "library.scss";
+
+/* Contact */
+#contact{
+  min-height: 100vh;
+  position: relative;
+}
+
+.footer{
+	padding-top: 4rem;
+	display: grid;
+	grid-template-areas:
+		'empty leftside rightside empty2'
+		'contact-end contact-end contact-end contact-end'; 
+	grid-template-columns: auto min(550px) min(550px) auto;
+	grid-template-rows:  auto 80px;
+	
+	&__rightside{
+		grid-area: rightside;
+
+		&-title{
+			
+		}
+
+		&-text{
+			font-family: 'Roboto';
+		}
+	}
+
+	&__leftside{ 
+		grid-area: leftside;
+	}
+
+	&__end{
+		grid-area: contact-end;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		&-text{
+			text-align: center;
+			font-family: 'Roboto';
+		}
+	}
+
+	&__logotype{
+		width: 290px;
+		height: 60px;
+	}
+
+	&__navigation{
+
+		&-list{
+			list-style:none;
+		}
+
+		&-text{
+			font-size: 1.4rem;
+			font-family: 'Roboto';
+			font-weight: 500;
+			padding: 0.5rem 0rem;
+		}
+
+		&-item{
+			padding: 0.5rem;
+
+			& > a {
+				color: black;
+				font-family: 'Roboto';
+				font-weight: 400;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__social{
+
+		&-text{
+			font-size: 1.3rem;
+			font-family: 'Roboto';
+			font-weight: 500;
+			padding: 0.5rem 0rem;
+		}
+
+		&-list{
+			
+		}	
+		
+		&-item{
+			list-style: none;
+			display: block;
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	
+}
+
+.contact{
+
+	&__container{
+		margin: auto;
+
+	}
+
+	&__form-cont{
+    grid-area: rightside;
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-direction: column;
+		width: min(90%, 520px);
+    margin-bottom: 2.5rem;
+
+    h1{
+      font-family: library.$font-mono;
+      color: library.$primary-90;
+	    font-weight: 600;
+		  width: 100%;
+		  font-size: clamp(1.9rem, 7vw, 4rem);
+		  line-height: clamp(55px, 13vw, 66px);
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    p{
+      padding: 0rem 0.1rem;
+      font-family: "Red Hat Text";
+      font-size: 1.1rem;
+      color: library.$primary-90;
+      line-height: 1.5;
+    }
+	}
+}
+
+.contact-end{
+
+  grid-area: social-links;
+  width: 100%;
+  background-color: library.$primary-30;
+  border-top: 1px library.$gray solid ;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	justify-content: space-around;
+
+
+	&__social-links-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		
+		a {
+			position: relative;
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			margin: 0px 15px;
+			transition: background-color ease 0.3s;
+
+			&:hover {
+				background-color: #6E869F;
+			}
+		}
+	}
+
+	&__social-link{
+		position: absolute;
+		fill: library.$font-color-navy;
+		width: 30px;
+		height: 30px;
+		z-index: 3;
+		transition: fill ease 0.3s;
+	
+		&:hover{
+			cursor: pointer;
+			fill: library.$main-bg;
+		}
+	}
+
+	&__handcrafted-by{
+		text-align: center;
+    color: #56697C;
+
+		p:first-child {
+			font-size: 1.125rem;
+			font-weight: 600;
+			line-height: 24px;
+		}
+
+		p:last-child{
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 21px;
+		}
+	}
+}
+
+.circle{
+
+  &__loading{
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    border: 4px solid library.$light-gray;
+    border-radius:100%;
+  }
+
+  &__first{
+    margin: -17px 0 0 -17px;
+    height: 34px;
+    width: 34px;
+    border-top-color: library.$primary-80;
+    animation: loading 1s infinite linear;
+    scale: 0.5;
+    transition: scale ease 0.3s, opacity ease 0.3s;
+  }
+
+  &__second{
+    margin: -10px -5px 0 -10px;
+    height: 20px;
+    width: 20px;
+    border-top-color: library.$primary-80;
+    animation: loading 1.5s infinite linear;
+  }
+
+}
+
+@keyframes loading{
+  from{ rotate: 0deg};
+  to{ rotate: 360deg};
+}
+
+@keyframes showResponse{
+  0%{ 
+    opacity: 0;
+    scale: 0.9;
+  }
+  5%{
+    opacity: 1;
+    scale: 1;
+  }
+  92%{
+    opacity: 1;
+  }
+  100%{ 
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@media only screen and (max-width: 780px){
+
+	.contact__container{
+    grid-template-areas:
+      'form'
+      'social-links'; 
+    grid-template-columns: auto;
+    grid-template-rows: auto120px;
+    column-gap: 3rem;
+	}
+
+	.contact__form-cont{
+		gap: 0px;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+	} 
+
+	.contact-end__phrase{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 600px){
+
+	.contact__container{
+    grid-template-rows: auto 120px;
+	}
+}
+
+@media only screen and (max-height: 700px) {
+  .contact__form-cont{
+    margin-bottom: 2.5rem;
+  }
+}

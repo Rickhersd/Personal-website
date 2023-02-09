@@ -1,0 +1,50 @@
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard{
+  display: grid;
+  grid-template-areas: 
+  "dashboard-nav dashboard-content";
+  grid-template-columns: 270px auto;
+
+  &__nav{
+    grid-area: dashboard-nav;
+    position: fixed;
+    width: calc(270px - 2rem);
+    padding: 0rem 1rem;
+    height: 100vh;
+    background-color: rgb(188, 188, 188);
+
+    &-logo{
+      margin: 1rem 0rem;
+      height: 40px;
+    }
+
+    &-list{
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item{
+      padding: 0.5rem;
+      
+      &:hover{
+        background-color: rgb(118, 118, 202);
+      }
+    }
+  }
+
+  &__content{
+    grid-area: dashboard-content;
+    padding: 0rem 1rem;
+
+    &-title{
+      text-align: center;
+      padding: 1rem 0rem;
+    }
+  }
+}

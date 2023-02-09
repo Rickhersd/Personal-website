@@ -1,0 +1,185 @@
+@use "config.scss";
+@use "library.scss";
+@use "loading.scss";
+@use 'body.scss';
+@use 'header.scss';
+@use 'darkmode-btn.scss';
+@use 'nav.scss';
+@use 'language-btn.scss';
+@use 'nav-mobile.scss';
+@use 'about-me.scss';
+@use 'skills.scss';
+@use 'portfolio.scss';
+@use 'contact.scss';
+@use 'darkmode.scss';
+@use 'me-animation.scss';
+
+.svg-icons{
+    fill: #767676;
+    display:inline-block;
+    background-color: var(--white);
+    transition: all ease 0.3s;
+    margin: 1rem;
+
+    & > svg {
+        height: 80px;
+        width: 80px;
+    }
+
+    &:hover{
+        cursor: pointer;
+        fill: library.$primary-90
+    }
+
+    & > h5 {
+        text-align: center;
+        transition-property: letter-spacing color;
+        transition-timing-function: ease;
+        transition-duration: 0.1s;
+        color: library.$font-color-gray;
+    }
+    &:hover > h5 {
+        color: library.$primary-90;
+        letter-spacing: 0.08rem;
+    }
+}
+
+
+.svg__hand{
+    opacity: 0;
+}
+
+.svg__computer{
+
+    &-dot{
+        transform-origin: 50% 50%;
+        opacity: 0;
+    }
+
+    &-line{
+        transform: scaleX(0);
+    }
+
+    &-block{
+        transform: scaleX(0);
+    }
+}
+
+.skills__header[data-intersection="true"]{
+
+    .skills__header{
+        @include library.intersectionHeader(); 
+    }
+}
+
+.portfolio__header[data-intersection="true"] {
+
+    .portfolio__header{
+        @include library.intersectionHeader();
+    }
+
+}
+
+
+.contact__container[data-intersection="true"]{
+
+    .contact__title{
+        opacity: 1;
+
+        span{
+            display: inline-block;
+            opacity: 0;
+            animation: SlideDownLetter 0.7s ease forwards;
+        }
+    }
+}
+
+.about-me__header[data-intersection="true"]{
+
+    .about-me__header{
+        @include library.intersectionHeader();
+    }
+
+    .svg__hand{
+
+        opacity: 1;
+
+        &-hand{
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: dash 2s ease forwards;
+            transform-origin: 50% 50%;
+            stroke: library.$main-bg;
+            stroke-width: 12;
+        }
+    
+        &-decoration{
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: dash2 0.75s ease forwards;
+            animation-delay: 0.9s;
+            stroke: library.$main-bg;
+            stroke-width: 0;
+        }
+    
+        &-decoration1{
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: dash2 0.75s ease forwards;
+            animation-delay: 0.5s;
+            stroke: library.$main-bg;
+            stroke-width: 0;
+        }
+    }
+      
+}
+
+@keyframes dash {
+    0% {
+      stroke-dashoffset: 2000;
+    }
+
+    100%{
+      stroke-dashoffset: 0;
+    }
+}
+
+
+@keyframes dash2 {
+    from {
+      stroke-dashoffset: 150;
+    }
+    to {
+      stroke-dashoffset: 0;
+
+    }
+}
+
+@keyframes blob {
+    from {
+        opacity: 0;
+      scale: 0.7;
+    }
+    to {
+        opacity: 1;
+      scale: 1;
+    }
+}
+  
+@keyframes SlideDownLetter {
+    from{
+      translate: 0px -40px;
+      opacity: 0;
+    }
+    to{
+      translate: 0px 0px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes LetterAnim {
+    0%{rotate: 0deg;}
+    30%{rotate: 20deg}
+    100%{rotate: 0deg;}
+  }
+ 

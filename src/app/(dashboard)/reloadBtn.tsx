@@ -1,22 +1,20 @@
 'use client'
 
 import React from 'react'
-import { usePathname, useRouter } from 'next/navigation';
+import { useTheme } from 'next-themes';
 
-export default function ReloadBtn({children}:{children:React.ReactNode}) {
+export default function ThemeChangerBtn({children}:{children:React.ReactNode}) {
 
-  const pathName = usePathname();
-  const router = useRouter();
+  const { theme, setTheme } = useTheme()
 
-  const handleOnClick = () => {
-    localStorage.setItem("dark-mode", "true");
-    router.refresh();
+  const handleClick = () => {
+    console.log('hola')
+    setTheme(theme != 'light'? 'light' : 'dark')
   }
 
-  return (<div>
-      <button onClick={handleOnClick}>
-        {children}
-      </button>
+  return (
+    <div>
+      <button onClick={handleClick}>{children}</button>
     </div>
   )
 }

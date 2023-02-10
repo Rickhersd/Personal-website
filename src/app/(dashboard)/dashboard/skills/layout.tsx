@@ -2,7 +2,7 @@ import React from 'react'
 import '@root/styles/dashboard_skills.css'
 import Plus_icon from '@root/svgs/plus-circle.svg'
 import Link from 'next/link'
-import ReloadBtn from '../../reloadBtn'
+import  ThemeChangerBtn from '../../reloadBtn'
 
 export default function DashboardSkills({
   children
@@ -21,7 +21,7 @@ export default function DashboardSkills({
           <li className='dashboard-skills__nav-item'>Backend</li>
           <li className='dashboard-skills__nav-item'>CDM</li>
           <li className='dashboard-skills__nav-item'>Other</li>
-          <ReloadBtn>Dark mode</ReloadBtn>
+          <ThemeChangerBtn>Dark mode</ThemeChangerBtn>
         </ul>
         <Link href="/dashboard/skills/add" className='dashboard-skills__nav-addBtn'><Plus_icon></Plus_icon> Add Skill</Link>
       </nav>

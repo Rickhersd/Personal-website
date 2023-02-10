@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import DarkmodeBtn from '../../public/darkmode-btn.svg'
 import LogotypeIcon from '../../public/logotype.svg'
-
 import '../styles/navbar.css'
 
 export default function Navbar() {

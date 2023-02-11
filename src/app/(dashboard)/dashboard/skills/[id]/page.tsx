@@ -5,11 +5,6 @@ import StringToJSX from '@root/ts/stringToJSXParser';
 import useUpdateDoc from '@root/hooks/useUpdateDoc';
 import useGetDoc from '@root/hooks/useGetDoc'
 
-window.ondrop = (e) => {
-  e.preventDefault()
-  console.log('me ejecute')
-}
-
 export default function UpdateSkill({params}:{params:{id:string}}) {
 
   const [skillName, setSkillName] = useState<string | undefined>();

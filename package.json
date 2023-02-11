@@ -28,5 +28,17 @@
     "@svgr/webpack": "^6.5.1",
     "postcss": "^8.4.21",
     "postcss-nested": "^6.0.0"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rickhersd/Personal-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rickhersd/Personal-website/issues"
+  },
+  "homepage": "https://github.com/Rickhersd/Personal-website#readme"
 }

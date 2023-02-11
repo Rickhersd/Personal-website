@@ -4,7 +4,7 @@ import Plus_icon from '@root/svgs/plus-circle.svg'
 import Link from 'next/link'
 import ThemeChangerBtn from '../../reloadBtn'
 import InternalNavProvider from '@root/contexts/InternalNavContext'
-import BtnPrueba from './add/btnPrueba'
+import InternalNavigation from './InternalNavigation'
 
 export default function DashboardSkills({
   children
@@ -14,21 +14,12 @@ export default function DashboardSkills({
   
   return (
     <div className='dashboard-skills'>
-      <InternalNavProvider>
+      <InternalNavProvider pathroot={'dashboard/skills'}>
+        <InternalNavigation></InternalNavigation>
         <nav className='dashboard-skills__nav'>
-          <ul className='dashboard-skills__nav-list'>
-            <li className='dashboard-skills__nav-item'>
-              <Link href="/dashboard/skills/list">All</Link>
-            </li>
-            <li className='dashboard-skills__nav-item'>All</li>
-            <li className='dashboard-skills__nav-item'>Backend</li>
-            <li className='dashboard-skills__nav-item'>CDM</li>
-            <li className='dashboard-skills__nav-item'>Other</li>
-            <ThemeChangerBtn>Dark mode</ThemeChangerBtn>
-          </ul>
+          
           <Link href="/dashboard/skills/add" className='dashboard-skills__nav-addBtn'><Plus_icon></Plus_icon> Add Skill</Link>
         </nav>
-        <BtnPrueba></BtnPrueba>
         <hr></hr>
         {children}
       </InternalNavProvider>

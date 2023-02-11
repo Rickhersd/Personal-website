@@ -2,27 +2,33 @@
 
 import useGetDoc from "@root/hooks/useGetDoc";
 import { Skill } from "@root/models/skills";
-import StringToJSX from "@root/ts/stringToJSXParser";
 import Link from "next/link";
+import SkillElement from "./skill";
 
-export default function ListSkills(filter:string) {
+export default function ListSkills(){
 
   const [response, listSkills] = useGetDoc('skills', Skill)
 
   return (
     <div>
-      <h2>Lista de habilidades:</h2>
+      <ul className='dashboard-skills__filter-list'>
+        <li className='dashboard-skills__filter-item'>
+          <button className='dashboard-skills__filter-btn'>All</button>
+        </li>
+        <li className='dashboard-skills__filter-item'>
+          <button className='dashboard-skills__filter-btn'>Backend</button>
+        </li>
+        <li className='dashboard-skills__filter-item'>
+          <button className='dashboard-skills__filter-btn'>Frontend</button>
+          </li>
+        <li className='dashboard-skills__filter-item'>
+          <button className='dashboard-skills__filter-btn'>Other</button>
+        </li>
+      </ul>
       <ul className='list-skill__list'>
       {!(listSkills.length == 0) ?
         listSkills.map((skill, index) => (
-          (
-            <li key={index} className='list-skill__item'>
-              <Link href={`/dashboard/skills/${skill.id}`} className="list-skill_item_anchor">
-                <StringToJSX domString={skill.svg_image} className="list-skill__item-image"></StringToJSX>
-                <h4 className='list-skill__item-name'>{skill.name}</h4>
-              </Link>
-            </li>
-          )
+          <SkillElement {...skill} key={index}></SkillElement>
         ))
         :
         <div> No hay habilidades almacenadas</div>

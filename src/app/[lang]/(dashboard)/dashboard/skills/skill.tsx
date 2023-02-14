@@ -17,10 +17,12 @@ export default function SkillElement({id, name, svg_image}:SkillsProps) {
 
   return (
     <Fragment key={id}>
-      <li className='list-skill__item'>
-        <button onClick={() => setUrl(name)} className="list-skill__item-btn"> 
-          <StringToJSX domString={svg_image} className="list-skill__item-image"></StringToJSX>
-          <h4 className='list-skill__item-name'>{name}</h4>
+      <li className='inline-block w-24 h-28 list-none'>
+        <button onClick={() => setUrl(name)} 
+          className="bg-transparent gap-1 rounded border-dashed border border-gray-300 flex flex-col justify-center items-center cursor-pointer 
+           w-24 h-28"> 
+          <StringToJSX domString={svg_image} className='w-16 h-16'></StringToJSX>
+          <h4 className='text-center'>{name}</h4>
         </button>
       </li>
     </Fragment>

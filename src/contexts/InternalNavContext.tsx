@@ -91,11 +91,7 @@ const InternalNavProvider = ({
 
   return (
     <InternalNavContext.Provider value={providervalue}>
-      <div className='internal-nav'>
-        <div>
-        {children}
-        </div> 
-      </div>
+      {children}
     </InternalNavContext.Provider>
   )
 }

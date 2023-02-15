@@ -1,3 +1,5 @@
+'use client'
+
 import InternalNavProvider from '@root/contexts/InternalNavContext'
 import { ThemeProvider } from 'next-themes'
 

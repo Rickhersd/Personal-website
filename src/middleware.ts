@@ -7,14 +7,10 @@ const locales = ['en', 'es'];
 
 function getLocale(request:Request) { 
 
-  const header = {headers: { 'Accept-Language': request.headers.get('Accept-Language') as string}}
+  const header = {headers: { 'accept-language': request.headers.get('Accept-Language') as string}}
   const negotiator =  new Negotiator(header)
   const languages = negotiator.languages();
   const defaultLocale = 'en';
-
-  console.log(header)
-  console.log(languages)
-  console.log(negotiator)
 
   return match(languages, locales, defaultLocale);
 }

@@ -1,8 +1,6 @@
 import React from "react";
-import Navbar from "../components/navbar";
+import Navbar from "../components/layout/navbar";
 import SkillsWheel from "../components/skillsWheel";
-
-
 
 const AboutMe = () => {
 

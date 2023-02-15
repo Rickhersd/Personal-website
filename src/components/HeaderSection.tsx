@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../sass/_header.scss';
-
 export default function HeaderSection() {
   return (
   <div className="header__container">

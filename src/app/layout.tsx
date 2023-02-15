@@ -1,5 +1,6 @@
 import { Roboto } from '@next/font/google';
 import AppProvider from '@root/contexts/AppContext';
+import './globals.css'
 
 const roboto = Roboto({
   weight: '400',

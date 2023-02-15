@@ -1,15 +1,13 @@
 import React from 'react'
 import Service from './service'
 
-import '../sass/services.scss'
-import databaseIcon from '../images/databaseCog.svg'
-import { Link } from 'react-router-dom'
+import databaseIcon from '@root/svgs/databaseCog.svg'
+import Link from 'next/link'
 
-import CvIcon from '../images/cvIcon.svg'
+import CvIcon from '@root/svgs/cvIcon.svg'
 
 export default function Services() {
 
-  console.log(typeof databaseIcon)
   return (
     <section className='services__section'>
       <div className='services__top-part'> 
@@ -18,7 +16,7 @@ export default function Services() {
           <h6 className='services__header-text'>Estyo contanste aprendizaje para hacer frente a toda clase de proyectos  solucionales a todo tipo de proyectoss</h6> 
         </header>
         <div className='services__linksGrop'>
-          <Link to='' className='services__linksGrop-link'>Mas Sobre Mi</Link>
+          <Link href='' className='services__linksGrop-link'>Mas Sobre Mi</Link>
           <a href="hola.com" className='services__linksGrop-cvLink'><CvIcon></CvIcon></a>
         </div>
       </div>

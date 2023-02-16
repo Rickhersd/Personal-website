@@ -7,7 +7,7 @@ import Services from "../../../components/services";
 export default function Home() {
   return (
     <>
-      <main className="lg:container mx-auto">
+      <main className="max-w-7xl m-auto">
         <HeaderSection></HeaderSection>
         <Services></Services>
         

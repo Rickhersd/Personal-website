@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className='w-full h-14 shadow-sm mx-auto'>
-      <div className='lg:container flex justify-between mx-auto items-center '>
+      <div className='max-w-7xl flex justify-between mx-auto items-center '>
         <Link href="/" className="">
           <LogotypeIcon className='w-60 h-10'></LogotypeIcon>
         </Link>

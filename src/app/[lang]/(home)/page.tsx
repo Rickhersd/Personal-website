@@ -7,7 +7,7 @@ import Services from "../../../components/services";
 export default function Home() {
   return (
     <>
-      <main className="max-w-7xl m-auto">
+      <main className="w-full m-auto">
         <HeaderSection></HeaderSection>
         <Services></Services>
         

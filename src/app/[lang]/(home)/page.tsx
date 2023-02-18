@@ -1,3 +1,4 @@
+import LanguageBtn from "@root/components/buttons/Language_Button";
 import React from "react";
 import BlogSection from "../../../components/BlogSection";
 import HeaderSection from "../../../components/HeaderSection";
@@ -9,9 +10,8 @@ export default function Home() {
     <>
       <main className="w-full m-auto">
         <HeaderSection></HeaderSection>
-        <Services></Services>
-        
-        <BlogSection ></BlogSection>
+        {/*<Services></Services>*/}   
+        {/*<BlogSection ></BlogSection>*/}
       </main>
     </>
   )

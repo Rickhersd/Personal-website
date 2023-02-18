@@ -1,5 +1,5 @@
 import Navbar from '@root/components/layout/navbar'
-import Footer from '@root/components/footer'
+import Footer from '@root/components/layout/footer'
 import React from 'react'
 
 export default function RootLayout({
@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Navbar></Navbar>
+      {/*<Navbar></Navbar>*/}
       <main>
       {children}  
       </main>

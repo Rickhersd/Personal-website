@@ -3,12 +3,12 @@ import React from 'react'
 
 export default function HeaderSection() {
   return (
-  <div className="header__container">
-    <div className='max-w-7xl'>
+  <div className="">
+    <div className='max-w-7xl m-auto mt-80'>
       <div className="header__rightside">
         <div>
-          <h1 className='text-left text-5xl font-medium text-blue-900'>Hola, mi nombre es <br /><span>RICARDO SANCHEZ</span></h1> 
-          <p className="header__subtext data">Desarollador Web Full Stack y Apasionado del Código.<br /> <span> Creo impresionantes y originales páginas web, y disfruto cada día poder dedicarme a ello.</span></p> 
+          <h1 className='text-left text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white"'>Hola, mi nombre es <br /><span>RICARDO SANCHEZ</span></h1> 
+          <p className="mt-8 max-w-lg text-xl font-semibold">Soy un desarrollador Web Full Stack y apasionado del Código.<br /> <span> Me dedico al desarrollo de aplicaciones web modernas, escalables y de calidad</span></p> 
         </div>
       </div>
       <div className='my-12'>

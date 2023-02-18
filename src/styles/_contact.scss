@@ -8,12 +8,6 @@
 
 .footer{
 	padding-top: 4rem;
-	display: grid;
-	grid-template-areas:
-		'empty leftside rightside empty2'
-		'contact-end contact-end contact-end contact-end'; 
-	grid-template-columns: auto min(550px) min(550px) auto;
-	grid-template-rows:  auto 80px;
 	
 	&__rightside{
 		grid-area: rightside;
@@ -49,10 +43,6 @@
 	}
 
 	&__navigation{
-
-		&-list{
-			list-style:none;
-		}
 
 		&-text{
 			font-size: 1.4rem;

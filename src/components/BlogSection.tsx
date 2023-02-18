@@ -2,6 +2,7 @@
 import Link from "next/link";
 
 import React from 'react'
+import Flashcard from "./ArticleFlashcard";
 import Particles from "./particles";
 
 export default function BlogSection() {
@@ -20,29 +21,29 @@ export default function BlogSection() {
       </div>
       <div className="max-w-7xl m-auto grid grid-cols-3 gap-10 -translate-y-16">
         <Flashcard 
-          title="Mi Portofoio: una gran y una experiencia" 
-          description="Quienes conocer como se desarrollo esta pagina? Todo el proceso explicado y sus dificultades que hice para desarrolar mi portfolio<" 
-          category="Personal"></Flashcard>
+          title="Mi Portofoio: una gran y una experiencia"
+          description="Quienes conocer como se desarrollo esta pagina? Todo el proceso explicado y sus dificultades que hice para desarrolar mi portfolio<"
+          category="Personal" date={""}></Flashcard>
         <Flashcard 
-          title="Las matematicas y la programacion" 
-          description="Algunos dicen, otros diran que si. Todo lo relacionado entre las matematicas y la programacion" 
-          category="Reflexion"></Flashcard>
+          title="Las matematicas y la programacion"
+          description="Algunos dicen, otros diran que si. Todo lo relacionado entre las matematicas y la programacion"
+          category="Reflexion" date={""}></Flashcard>
         <Flashcard 
-          title="Mejor programador apenas comenzando" 
-          description="Si apenas estas comenzando, cada paso descrito aqui te ayudara a ser mejor programor para el dia a dia" 
-          category="Aprendizaje"></Flashcard>
+          title="Mejor programador apenas comenzando"
+          description="Si apenas estas comenzando, cada paso descrito aqui te ayudara a ser mejor programor para el dia a dia"
+          category="Aprendizaje" date={""}></Flashcard>
         <Flashcard 
-          title="Mi Portofoio: una gran y una experiencia" 
-          description="Quienes conocer como se desarrollo esta pagina? Todo el proceso explicado y sus dificultades que hice para desarrolar mi portfolio<" 
-          category="Personal"></Flashcard>
+          title="Mi Portofoio: una gran y una experiencia"
+          description="Quienes conocer como se desarrollo esta pagina? Todo el proceso explicado y sus dificultades que hice para desarrolar mi portfolio<"
+          category="Personal" date={""}></Flashcard>
         <Flashcard 
-          title="Las matematicas y la programacion" 
-          description="Algunos dicen, otros diran que si. Todo lo relacionado entre las matematicas y la programacion" 
-          category="Reflexion"></Flashcard>
+          title="Las matematicas y la programacion"
+          description="Algunos dicen, otros diran que si. Todo lo relacionado entre las matematicas y la programacion"
+          category="Reflexion" date={""}></Flashcard>
         <Flashcard 
-          title="Mejor programador apenas comenzando" 
-          description="Si apenas estas comenzando, cada paso descrito aqui te ayudara a ser mejor programor para el dia a dia" 
-          category="Aprendizaje"></Flashcard>
+          title="Mejor programador apenas comenzando"
+          description="Si apenas estas comenzando, cada paso descrito aqui te ayudara a ser mejor programor para el dia a dia"
+          category="Aprendizaje" date={""}></Flashcard>
       </div>
       <div className="ml-auto max-w-md b rounded-md shadow-lg border-gray-300 border">
         <div className="p-4 w-full">
@@ -59,38 +60,13 @@ export default function BlogSection() {
           <div className="text-center">➡</div>
         </Link>
       </div>
-   
-      <Particles></Particles>
+
 
     </div>
   )
 }
 
-function Flashcard ({
-  title,
-  description,
-  category
-}:{
-  title:string,
-  description:string,
-  category:string 
-}){
 
-  return (
-  <div className="shadow-lg rounded overflow-hidden">
-    <img src='' className='w-full aspect-video bg-slate-300' alt='Proyect-img'></img>
-    <div className="px-4 pb-4 pt-3">
-      <h6 className="text-xs pb-2  text-gray-600 font-extrabold tracking-wide "> 15 de Feb. del 2023</h6> 
-      <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
-      <div className="font-normal py-2 text-gray-800">{description}</div> 
-      <div className="w-full pt-4 flex items-center">
-        <span className="w-full border  border-gray-300 h-0"></span>
-        <h6 className="ml-auto pl-2 text-sm text-gray-600 font-extrabold tracking-wide ">{category.toUpperCase()}</h6> 
-      </div>
-    </div> 
-  </div>
-  )
-}
 
 function Category ({
   title,

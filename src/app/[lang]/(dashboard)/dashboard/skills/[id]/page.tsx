@@ -3,7 +3,7 @@
 import React, { createRef, DragEvent, FormEvent, useState } from 'react'
 import StringToJSX from '@root/ts/stringToJSXParser';
 import useUpdateDoc from '@root/hooks/useUpdateDoc';
-import useGetDoc from '@root/hooks/useGetDoc'
+import useGetDoc from '@root/hooks/FetchDoc'
 
 export default function UpdateSkill({params}:{params:{id:string}}) {
 

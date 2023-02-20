@@ -21,7 +21,8 @@ export default function SkillElement({id, name, svg_image}:SkillsProps) {
         <button onClick={() => setUrl(name)} 
           className="bg-transparent gap-1 rounded border-dashed border border-gray-300 flex flex-col justify-center items-center cursor-pointer 
            w-24 h-28"> 
-          <StringToJSX domString={svg_image} className='w-16 h-16'></StringToJSX>
+           <div className="w-16 h-16" dangerouslySetInnerHTML={{__html:svg_image}}></div>
+          {/*<StringToJSX domString={svg_image} className='w-16 h-16'></StringToJSX>*/}
           <h4 className='text-center'>{name}</h4>
         </button>
       </li>

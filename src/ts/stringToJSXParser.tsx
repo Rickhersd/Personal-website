@@ -1,6 +1,12 @@
+'use client'
+
+import parse from "node-html-parser/dist/parse";
 import React, { DOMAttributes, DOMElement } from "react";
 
 function getNodesFromString(string:string){
+  const root = parse(string)
+  console.log(root)
+  console.log(typeof(root))
   return new DOMParser().parseFromString(string, "text/html").body.children;
 };
 

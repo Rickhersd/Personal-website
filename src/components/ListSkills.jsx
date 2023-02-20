@@ -1,23 +1,18 @@
 'use client'
 
 import useFilter from "@root/hooks/useFilter";
-import useGetDoc from "@root/hooks/FetchDoc";
-import Link from "next/link";
-import { useEffect } from "react";
-import AddSkillBtn from "./add/addSkillBtn";
+import { useEffect, useState } from "react";
 import SkillElement from "./SkillElement";
 
-export default function ListSkills(){
+export default function ListSkills({listSkills}){
 
-  //const [response, listSkills] = useGetDoc('skills', Skill)
   const [currentFilter, filter] = useFilter(listSkills)
+  const [state, setState] = useState('')
 
   useEffect(()=>{
     filter.setList(listSkills)
-    console.log(filter.filter())
   },[listSkills, currentFilter])
   
-
   filter.filter()
 
   return (
@@ -45,7 +40,7 @@ export default function ListSkills(){
         :
         <div> No hay habilidades almacenadas</div>
       }
-      { !(listSkills.length == 0) && <AddSkillBtn></AddSkillBtn>}
+      { !(listSkills.length == 0) && <div>no hay</div>}
       </ul>
     </div>
   )

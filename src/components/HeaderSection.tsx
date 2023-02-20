@@ -1,10 +1,15 @@
+import { Canvas } from '@react-three/fiber'
 import Link from 'next/link'
 import React from 'react'
+import Scenary from './threejs/Scenary'
 
 export default function HeaderSection() {
   return (
-  <div className="">
-    <div className='max-w-7xl m-auto mt-80'>
+  <div className="max-w-7xl m-auto relative">
+    <div className='max-w-5xl absolute ml-auto -top-1/4 right-0'>
+      {/*<Scenary></Scenary>*/}
+    </div>
+    <div className='mt-80'>
       <div className="header__rightside">
         <div>
           <h1 className='text-left text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white"'>Hola, mi nombre es <br /><span>RICARDO SANCHEZ</span></h1> 
@@ -22,6 +27,8 @@ export default function HeaderSection() {
         </ul> 
       </div>
     </div>
+    
+    
   </div>
   )
 }

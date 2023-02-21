@@ -1,56 +1,61 @@
 'use client'
 
-import React from 'react'
-
-import GmailIcon from '@root/svgs/gmail.svg'
-import LinkedinIcon from '@root/svgs/linkedin.svg'
-import GithubIcon from '@root/svgs/github.svg'
-
 import AnchorItem from '../AnchorItem';
 import ListRender from '../ListRender';
+import SuscribeFlashCard from '../flashcards/SuscribeFlashCard'
+import { GitHub, Linkedin, Mail } from 'react-feather'
 //import LogotypeIcon from '../images/logotype.svg'
 
 export default function Footer() {
   return (
-    <footer className='w-full mt-10'>
-      <div className='grid grid-cols-5 max-w-7xl mx-auto pt-10 border-t border-gray-300'>
+    <footer className='w-full mt-20 sm:mt-28 border-slate-100'>
+      <div className='flex flex-col-reverse gap-4 sm:grid sm:grid-cols-6 max-w-7xl mx-auto pt-10 p-4'>
         <div>
-          <h4 className='text-2xl font-bold text-gray-900'>Navigation</h4>
-          <ul>
-            <ListRender className='text-gray-800 p-2 pl-0'>
-              <AnchorItem href="about-me">About me</AnchorItem>
-              <AnchorItem href="blog">Blog</AnchorItem>
-              <AnchorItem href="projects">Portfolio</AnchorItem>
-              <AnchorItem href="contact">Contact</AnchorItem>
-            </ListRender>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-2xl font-bold text-gray-900">Social</h4>
-          <ul className="footer__social-list">
-            <ListRender className='flex flex-row text-gray-800 pl-0 items-center'>
+          <h4 className="text-2xl font-bold hidden sm:block text-slate-800">Social</h4>
+          <ul className="flex justify-center sm:flex-col">
+            <ListRender className='flex flex-col py-0 sm:py-2 sm:flex-row text-slate-700 pl-0 items-center'>
               <a href='https://github.com/Rickhersd'>
-                <GmailIcon className='w-10 y-10 text-gray-800'></GmailIcon>
-                Gmail
+                <Mail className='w-8 h-8 sm:w-5 sm:h-5 text-gray-800'></Mail>
+                <span className='hidden sm:block'>Gmail</span>
               </a>
               <a href='https://www.linkedin.com/in/ricardosan-webdev/'>
-                <LinkedinIcon className='w-10 y-10 text-gray-800'></LinkedinIcon>
-                Linkelin
+                <Linkedin className='w-8 h-8 sm:w-5 sm:h-5 text-gray-800'></Linkedin>
+                <span className='hidden sm:block'>Linkelin</span>
               </a>
               <a href='https://github.com/Rickhersd'>
-                <GithubIcon className='w-10 y-10 text-gray-800'></GithubIcon>
-                Github
+                <GitHub className='w-8 h-8 sm:w-5 sm:h-5 text-gray-800'></GitHub>
+                <span className='hidden sm:block'>Github</span>
               </a>
             </ListRender>
           </ul>
         </div>
-        <div className="col-span-3">
-          <h3 className="footer__rightside-title">Contactame</h3>
-          <p className="footer__rightside-text"> No dudes en comunicarte conmigo en cualquier momenhref, ya sea por email direchref a ricardosanchez.webdev@gmail.com o utilizando el fomulario de abajo. Eshrefy interesando en hrefda clase de proyechrefs sin importar su dificultad.</p>
+        <div className='sm:col-span-2'>
+          <h4 className='text-2xl font-bold text-slate-800'>Navegacion</h4>
+          <div className='grid grid-cols-2'>
+            <ul>
+              <ListRender className='text-slate-700 p-2 pl-0 '>
+                <AnchorItem href="about">Home</AnchorItem>
+                <AnchorItem href="about">Sobre mi</AnchorItem>
+                <AnchorItem href="blog">Blog</AnchorItem>
+                <AnchorItem href="projects">Portfolio</AnchorItem>
+                <AnchorItem href="contact">Contact</AnchorItem>
+              </ListRender>
+            </ul>
+            <ul>
+              <ListRender className='text-slate-700 p-2 pl-0'>
+                <AnchorItem href="about">Curriculum</AnchorItem>
+                <AnchorItem href="about">Habilidades</AnchorItem>
+                <AnchorItem href="contact">Politicas de Privacidad</AnchorItem>
+                <AnchorItem href="contact">Atribuciones</AnchorItem>
+              </ListRender>
+            </ul>
+          </div>
         </div>
+        <SuscribeFlashCard className="ml-auto max-w-md sm:col-span-3 rounded-md shadow-lg border-gray-300 border"/>
       </div>
-      <div className="w-full">
-        <p className="block mx-auto text-center">Esta página web fue hecha por mí © 2022</p>   
+      <div className="w-full p-4">
+        <p className="block mx-auto text-xs text-center text-slate-600"> Esta pagina fue desarrollada con NextJS © 2022 RicardoDev</p>
+        <p className='block mx-auto text-xs text-center text-slate-600'>Todos los modelos 3D utilizados fueron descargados de PolyPizza bajo licencia CC by 3.0: ver Atribuciones</p>
       </div>
     </footer>
   )

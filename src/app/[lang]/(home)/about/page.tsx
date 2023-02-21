@@ -1,8 +1,10 @@
 
 import GithubFlashCard from '@root/components/flashcards/GithubFlashCard';
 import ListSkills from '@root/components/ListSkills';
+import { PageWrapper } from '@root/contexts/TransitionContext';
 import FetchDoc from '@root/hooks/FetchDoc';
 import Skill from '@root/models/skills';
+import { motion } from 'framer-motion'
 
 import React, { Suspense } from 'react'
 
@@ -32,7 +34,7 @@ export default async function Page() {
   //const dataGithubProfile = await getGithubData();
 
   return (
-    <main className='max-w-6xl m-auto flex flex-col gap-3'>
+    <PageWrapper key='about-page' className='max-w-6xl m-auto flex flex-col gap-3'>
       <div className='grid grid-cols-6 gap-4'>
        {/* <Suspense fallback={<div>Loading...</div>}>   
           @ts-expect-error Server Component 
@@ -54,6 +56,6 @@ export default async function Page() {
         {/<ListSkills listSkills={dataSkillsSet}></ListSkills> 
       </Suspense>*/}
       
-    </main>
+    </PageWrapper>
   )
 }  

@@ -16,10 +16,10 @@ export default function Navbar() {
         </Link>
         <ul className="flex flex-row justify-center gap-2 items-center">
           <ListRender className='flex items-center justify-center text-neutral-700 text-sm p-3'>
-            <AnchorItem href='about-me' >About me</AnchorItem>
+            <AnchorItem href='about' >About me</AnchorItem>
             <AnchorItem href='blog'>Blog</AnchorItem>
             <AnchorItem href='projects'>Portfolio</AnchorItem>
-            <AnchorItem href='contact-me'>Contact</AnchorItem>
+            <AnchorItem href='contact'>Contact</AnchorItem>
             <span className="self-center">|</span>
             <LanguageBtn></LanguageBtn>
             <Darkmode_btn></Darkmode_btn>

@@ -1,6 +1,8 @@
 import Navbar from '@root/components/layout/navbar'
 import Footer from '@root/components/layout/footer'
 import React from 'react'
+import { AnimatePresence } from 'framer-motion'
+import TransitionProvider from '@root/contexts/TransitionContext'
 
 export default function RootLayout({
   children,
@@ -10,9 +12,9 @@ export default function RootLayout({
   return (
     <>
       {<Navbar></Navbar>}
-      <main>
+      <TransitionProvider>
       {children}  
-      </main>
+      </TransitionProvider>
       <Footer></Footer>
     </>
   )

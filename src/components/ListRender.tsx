@@ -16,7 +16,7 @@ export default function ListRender({
 
   const updateChildrenWithProps = getChildrenList()?.map((child, index) => {
     return (
-    <li key={index} className={className}>
+    <li key={index}>
       {child}
     </li> 
     )

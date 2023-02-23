@@ -8,13 +8,13 @@ import AnchorItem from '../AnchorItem'
 
 export default function Navbar() {
 
-  return (
+  return <>
     <nav className='w-full py-4 mx-auto'>
       <div className='max-w-7xl flex justify-between mx-auto items-center '>
         <Link href="/">
           <LogotypeIcon className='w-60 h-10'></LogotypeIcon>
         </Link>
-        <ul className="flex flex-row justify-center gap-2 items-center">
+        <ul className="hidden flex-row justify-center gap-2 items-center sm:flex">
           <ListRender className='flex items-center justify-center text-neutral-700 text-sm p-3'>
             <AnchorItem href='about' >About me</AnchorItem>
             <AnchorItem href='blog'>Blog</AnchorItem>
@@ -27,5 +27,5 @@ export default function Navbar() {
         </ul>
       </div>
     </nav>   
-  )
+  </>
 }

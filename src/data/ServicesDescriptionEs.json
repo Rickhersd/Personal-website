@@ -1,0 +1,37 @@
+[
+{
+"id": 0,
+"title":"Paginas y Sitios Webs Basicas",
+"description":"Desarrollo de paginas y sitios webs sencillos como Landing page y un numero reducio, aplicando las tencnologias basicas de la web",
+"technolgies": ["HTML","CSS","SASS","JAVASCRIPT","TAilwind", "Bootstrap", "JQuery"]
+},
+{
+"id": 0,
+"title":"Aplicaciones REACT",
+"description":"Desarrollo de Aplcacioens de una sola, ",
+"technolgies": ["REACT.JS","React Router", "Tailwind", "Redux", "Framer motion"]
+},
+{
+"id": 0,
+"title":"Aplicaciones NEXT",
+"description":"Desarrollo de Sigle Page Aplication con Server Side Rendering. La ultima tegnologia en cuanto a desarrollo web, y que ofrente los mejores rendimientos en caunto a SEO y Expereciena de Usario",
+"technolgies": ["Next Js","Ecosistema React"]
+},
+{
+"id": 0,
+"title":"Backend Serverless",
+"description":"Implementacion rapida de servicios de Autenticacion, Base de datos y Almacenamiento, todo desde el lado del cliente",
+"technolgies": ["Firebase"]
+},
+{
+"id": 0,
+"title":"Resdiseno y Responsividad",
+"description":"Soy experto interpretando cualquier diseno propuesto, asi como recreando animiaciones, efectos, e inte",
+"technolgies": ["Css","Sass", "Less", ""]
+},
+{
+  "id": 0,
+  "title":"Paginas con CMS",
+  "description":"Desarrollo de paginas y sitios webs utilizando Gestores de contenido, interpretando cualquier diseno propuesto, asi como recreando animiaciones, efectos, e inte",
+  "technolgies": ["Worldpress","Shopify", "Elementos", "Woo Comemerces"]
+}]

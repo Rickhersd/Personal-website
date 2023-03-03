@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang={params.lang} className={roboto.className}>
       <head />
-      <body>
+      <body className='bg-zinc-50 text-gray-600 dark:text-zinc-300 dark:bg-zinc-800'>
         <AppProvider locale={params.lang}>
           {children}
         </AppProvider>

@@ -38,7 +38,7 @@ export default function ChevronsAboutMeBtn (){
       onMouseLeave={() => setIsHover(false)}>
       <motion.div
         animate={isHover? 'hover' : 'idle'}
-        className='align-center no-wrap relative text-blue-600 px-4 py-2 rounded-full flex flex-row-reverse gap-2' 
+        className='align-center no-wrap relative text-blue-500 px-4 py-2 rounded-full flex flex-row-reverse gap-2' 
         >
         <div className='flex flex-row -right-8'>
           <motion.span variants={variants} custom={delay2} className='w-2'>
@@ -50,7 +50,7 @@ export default function ChevronsAboutMeBtn (){
         </div>
         <div className='relative w-10'>
           <motion.p
-            className='bg-slate-100 absolute top-0 w-20 left-2 py-0 px-0 text-lg'
+            className='bg-zinc-300 dark:bg-zinc-900 absolute top-0 w-20 left-2 py-0 px-0 text-lg'
             variants={{
               idle: {
                 translateX:'10px',

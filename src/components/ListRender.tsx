@@ -9,7 +9,8 @@ export default function ListRender({
 }) {
   const getChildrenList = () => {
     const childrenList = React.Children.map(children, (child) => {
-     return React.cloneElement(child as ReactElement<any, string>, {className: className})
+      const element = child as ReactElement<any, string>
+      return React.cloneElement(element, {className: element.props.className + " " + className})
     })
     return childrenList
   }

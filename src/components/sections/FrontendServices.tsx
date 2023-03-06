@@ -1,60 +1,78 @@
 import React from "react";
 
-import BasicBg from "./servicesBackgrounds/BasicBackground";
+import FrontendBackground from "./servicesBackgrounds/FrontendBackground";
 import ListRender from "../ListRender";
 
 import ServiceDescription from "../ServiceDescription";
 import ButtonService from "../buttons/ServiceButton";
 import IndexContext from "@root/contexts/IndexContext";
 
+import HMTLIcon from "@root/svgs/HTML.svg"
+import ReactIcon from "@root/svgs/React.svg"
+import NextIcon from "@root/svgs/next.svg"
+import TailwindIcon from "@root/svgs/Tailwind.svg"
+import FirebaseIcon from "@root/svgs/Firebase.svg"
+import WorldpressIcon from "@root/svgs/Worldpress.svg"
+import AnimateWrapper from "../AnimateWrapper";
+
 export default function FrontendService() {
 
   return <>
-    <section className="relative py-20">
+    <section className="py-20 px-3">
       <IndexContext>
-        <div className="m-auto relative max-w-7xl gap-4 grid grid-cols-5 items-center grid-rows-3">
+        <div className="flex flex-col sm:grid sm:col-span-4 lg:grid-cols-5 m-auto relative max-w-7xl gap-4 lg:gap-0">
           <div className="col-span-5 flex-col flex">
-            <h1 className="text-5xl text-slate-900 font-bold mt-8 dark:text-zinc-100">Desarrollador Frontend</h1>
-            <p className="max-w-2xl text-lg mt-4">
-              Dispongo de los conocimientos necesarrios para el desarrollo de
-              aplacicione simples y que cumplan con cualquier necesidad del
-              usaruios antes se limitaba al apartado, pero
+            <h1 className="text-4xl sm:text-5xl text-slate-900 font-bold mt-8 dark:text-zinc-100">Desarrollador Frontend</h1>
+            <p className="text-base max-w-2xl sm:text-lg mt-2 sm:mt-4">
+            Soy capaz de maquetar y estilizar cualquier diseño o apartado visual, así como integrar desde las funcionalidades mas simples a complejas. Actualmente, me centro en el desarrollo de SPA’s con React y en App’s con SSR con Next.js
             </p>
           </div>
-          <ul className="col-span-2 flex gap-4 mt-2 mb-20 h-full">
+          <ul className="sm:mt-4 sm:col-span-1 lg:col-span-2 flex flex-row sm:flex-col lg:flex-row gap-4">
             <ListRender className="">
               <ButtonService index={0} tag="Basicos">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                  <path d="m23.749 30.005c-.119.063-.109.083.005.025.037-.015.068-.036.095-.061 0-.021 0-.021-.1.036zm.24-.13c-.057.047-.057.047.011.016.036-.021.068-.041.068-.047 0-.027-.016-.021-.079.031zm.156-.094c-.057.047-.057.047.011.016.037-.021.068-.043.068-.048 0-.025-.016-.02-.079.032zm.158-.093c-.057.047-.057.047.009.015.037-.02.068-.041.068-.047 0-.025-.016-.02-.077.032zm.213-.141c-.109.073-.147.12-.047.068.067-.041.181-.131.161-.131-.043.016-.079.043-.115.063zm-9.563-29.536c-.073.005-.292.025-.484.041-4.548.412-8.803 2.86-11.5 6.631-1.491 2.067-2.459 4.468-2.824 6.989-.129.88-.145 1.14-.145 2.333 0 1.192.016 1.448.145 2.328.871 6.011 5.147 11.057 10.943 12.927 1.043.333 2.136.563 3.381.704.484.052 2.577.052 3.061 0 2.152-.24 3.969-.771 5.767-1.688.276-.14.328-.177.291-.208-.88-1.161-1.744-2.323-2.609-3.495l-2.557-3.453-3.203-4.745c-1.068-1.588-2.14-3.172-3.229-4.744-.011 0-.025 2.109-.031 4.681-.011 4.505-.011 4.688-.068 4.792-.057.125-.151.229-.276.287-.099.047-.188.057-.661.057h-.541l-.141-.088c-.088-.057-.161-.136-.208-.229l-.068-.141.005-6.271.011-6.271.099-.125c.063-.077.141-.14.229-.187.131-.063.183-.073.724-.073.635 0 .74.025.907.208 1.296 1.932 2.588 3.869 3.859 5.812 2.079 3.152 4.917 7.453 6.312 9.563l2.537 3.839.125-.083c1.219-.813 2.328-1.781 3.285-2.885 2.016-2.308 3.324-5.147 3.767-8.177.129-.88.145-1.141.145-2.333 0-1.193-.016-1.448-.145-2.328-.871-6.011-5.147-11.057-10.943-12.928-1.084-.343-2.199-.577-3.328-.697-.303-.031-2.371-.068-2.631-.041zm6.547 9.677c.151.072.265.208.317.364.027.084.032 1.823.027 5.74l-.011 5.624-.989-1.52-.995-1.521v-4.083c0-2.647.011-4.131.025-4.204.047-.167.161-.307.313-.395.124-.063.172-.068.667-.068.463 0 .541.005.645.063z" />
-                </svg>
+                <HMTLIcon className='w-10 lg:w-14 h-10 lg:h-14 '></HMTLIcon>
               </ButtonService>
               <ButtonService index={1} tag="Resposinve Design">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                  <path d="m23.749 30.005c-.119.063-.109.083.005.025.037-.015.068-.036.095-.061 0-.021 0-.021-.1.036zm.24-.13c-.057.047-.057.047.011.016.036-.021.068-.041.068-.047 0-.027-.016-.021-.079.031zm.156-.094c-.057.047-.057.047.011.016.037-.021.068-.043.068-.048 0-.025-.016-.02-.079.032zm.158-.093c-.057.047-.057.047.009.015.037-.02.068-.041.068-.047 0-.025-.016-.02-.077.032zm.213-.141c-.109.073-.147.12-.047.068.067-.041.181-.131.161-.131-.043.016-.079.043-.115.063zm-9.563-29.536c-.073.005-.292.025-.484.041-4.548.412-8.803 2.86-11.5 6.631-1.491 2.067-2.459 4.468-2.824 6.989-.129.88-.145 1.14-.145 2.333 0 1.192.016 1.448.145 2.328.871 6.011 5.147 11.057 10.943 12.927 1.043.333 2.136.563 3.381.704.484.052 2.577.052 3.061 0 2.152-.24 3.969-.771 5.767-1.688.276-.14.328-.177.291-.208-.88-1.161-1.744-2.323-2.609-3.495l-2.557-3.453-3.203-4.745c-1.068-1.588-2.14-3.172-3.229-4.744-.011 0-.025 2.109-.031 4.681-.011 4.505-.011 4.688-.068 4.792-.057.125-.151.229-.276.287-.099.047-.188.057-.661.057h-.541l-.141-.088c-.088-.057-.161-.136-.208-.229l-.068-.141.005-6.271.011-6.271.099-.125c.063-.077.141-.14.229-.187.131-.063.183-.073.724-.073.635 0 .74.025.907.208 1.296 1.932 2.588 3.869 3.859 5.812 2.079 3.152 4.917 7.453 6.312 9.563l2.537 3.839.125-.083c1.219-.813 2.328-1.781 3.285-2.885 2.016-2.308 3.324-5.147 3.767-8.177.129-.88.145-1.141.145-2.333 0-1.193-.016-1.448-.145-2.328-.871-6.011-5.147-11.057-10.943-12.928-1.084-.343-2.199-.577-3.328-.697-.303-.031-2.371-.068-2.631-.041zm6.547 9.677c.151.072.265.208.317.364.027.084.032 1.823.027 5.74l-.011 5.624-.989-1.52-.995-1.521v-4.083c0-2.647.011-4.131.025-4.204.047-.167.161-.307.313-.395.124-.063.172-.068.667-.068.463 0 .541.005.645.063z" />
-                </svg>
+                <ReactIcon className="w-10 lg:w-14 h-10 lg:h-14 "></ReactIcon>
               </ButtonService>
               <ButtonService index={2} tag="React Apps" >
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                  <path d="m23.749 30.005c-.119.063-.109.083.005.025.037-.015.068-.036.095-.061 0-.021 0-.021-.1.036zm.24-.13c-.057.047-.057.047.011.016.036-.021.068-.041.068-.047 0-.027-.016-.021-.079.031zm.156-.094c-.057.047-.057.047.011.016.037-.021.068-.043.068-.048 0-.025-.016-.02-.079.032zm.158-.093c-.057.047-.057.047.009.015.037-.02.068-.041.068-.047 0-.025-.016-.02-.077.032zm.213-.141c-.109.073-.147.12-.047.068.067-.041.181-.131.161-.131-.043.016-.079.043-.115.063zm-9.563-29.536c-.073.005-.292.025-.484.041-4.548.412-8.803 2.86-11.5 6.631-1.491 2.067-2.459 4.468-2.824 6.989-.129.88-.145 1.14-.145 2.333 0 1.192.016 1.448.145 2.328.871 6.011 5.147 11.057 10.943 12.927 1.043.333 2.136.563 3.381.704.484.052 2.577.052 3.061 0 2.152-.24 3.969-.771 5.767-1.688.276-.14.328-.177.291-.208-.88-1.161-1.744-2.323-2.609-3.495l-2.557-3.453-3.203-4.745c-1.068-1.588-2.14-3.172-3.229-4.744-.011 0-.025 2.109-.031 4.681-.011 4.505-.011 4.688-.068 4.792-.057.125-.151.229-.276.287-.099.047-.188.057-.661.057h-.541l-.141-.088c-.088-.057-.161-.136-.208-.229l-.068-.141.005-6.271.011-6.271.099-.125c.063-.077.141-.14.229-.187.131-.063.183-.073.724-.073.635 0 .74.025.907.208 1.296 1.932 2.588 3.869 3.859 5.812 2.079 3.152 4.917 7.453 6.312 9.563l2.537 3.839.125-.083c1.219-.813 2.328-1.781 3.285-2.885 2.016-2.308 3.324-5.147 3.767-8.177.129-.88.145-1.141.145-2.333 0-1.193-.016-1.448-.145-2.328-.871-6.011-5.147-11.057-10.943-12.928-1.084-.343-2.199-.577-3.328-.697-.303-.031-2.371-.068-2.631-.041zm6.547 9.677c.151.072.265.208.317.364.027.084.032 1.823.027 5.74l-.011 5.624-.989-1.52-.995-1.521v-4.083c0-2.647.011-4.131.025-4.204.047-.167.161-.307.313-.395.124-.063.172-.068.667-.068.463 0 .541.005.645.063z" />
-                </svg>
+                <NextIcon className='w-10 lg:w-14 h-10 lg:h-14 '></NextIcon>
               </ButtonService>
               <ButtonService index={3} tag="Backend Serveless">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                  <path d="m23.749 30.005c-.119.063-.109.083.005.025.037-.015.068-.036.095-.061 0-.021 0-.021-.1.036zm.24-.13c-.057.047-.057.047.011.016.036-.021.068-.041.068-.047 0-.027-.016-.021-.079.031zm.156-.094c-.057.047-.057.047.011.016.037-.021.068-.043.068-.048 0-.025-.016-.02-.079.032zm.158-.093c-.057.047-.057.047.009.015.037-.02.068-.041.068-.047 0-.025-.016-.02-.077.032zm.213-.141c-.109.073-.147.12-.047.068.067-.041.181-.131.161-.131-.043.016-.079.043-.115.063zm-9.563-29.536c-.073.005-.292.025-.484.041-4.548.412-8.803 2.86-11.5 6.631-1.491 2.067-2.459 4.468-2.824 6.989-.129.88-.145 1.14-.145 2.333 0 1.192.016 1.448.145 2.328.871 6.011 5.147 11.057 10.943 12.927 1.043.333 2.136.563 3.381.704.484.052 2.577.052 3.061 0 2.152-.24 3.969-.771 5.767-1.688.276-.14.328-.177.291-.208-.88-1.161-1.744-2.323-2.609-3.495l-2.557-3.453-3.203-4.745c-1.068-1.588-2.14-3.172-3.229-4.744-.011 0-.025 2.109-.031 4.681-.011 4.505-.011 4.688-.068 4.792-.057.125-.151.229-.276.287-.099.047-.188.057-.661.057h-.541l-.141-.088c-.088-.057-.161-.136-.208-.229l-.068-.141.005-6.271.011-6.271.099-.125c.063-.077.141-.14.229-.187.131-.063.183-.073.724-.073.635 0 .74.025.907.208 1.296 1.932 2.588 3.869 3.859 5.812 2.079 3.152 4.917 7.453 6.312 9.563l2.537 3.839.125-.083c1.219-.813 2.328-1.781 3.285-2.885 2.016-2.308 3.324-5.147 3.767-8.177.129-.88.145-1.141.145-2.333 0-1.193-.016-1.448-.145-2.328-.871-6.011-5.147-11.057-10.943-12.928-1.084-.343-2.199-.577-3.328-.697-.303-.031-2.371-.068-2.631-.041zm6.547 9.677c.151.072.265.208.317.364.027.084.032 1.823.027 5.74l-.011 5.624-.989-1.52-.995-1.521v-4.083c0-2.647.011-4.131.025-4.204.047-.167.161-.307.313-.395.124-.063.172-.068.667-.068.463 0 .541.005.645.063z" />
-                </svg>
+                <TailwindIcon className='w-10 lg:w-14 h-10 lg:h-14 '></TailwindIcon>
               </ButtonService>
               <ButtonService index={4} tag="Next Apps">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                  <path d="m23.749 30.005c-.119.063-.109.083.005.025.037-.015.068-.036.095-.061 0-.021 0-.021-.1.036zm.24-.13c-.057.047-.057.047.011.016.036-.021.068-.041.068-.047 0-.027-.016-.021-.079.031zm.156-.094c-.057.047-.057.047.011.016.037-.021.068-.043.068-.048 0-.025-.016-.02-.079.032zm.158-.093c-.057.047-.057.047.009.015.037-.02.068-.041.068-.047 0-.025-.016-.02-.077.032zm.213-.141c-.109.073-.147.12-.047.068.067-.041.181-.131.161-.131-.043.016-.079.043-.115.063zm-9.563-29.536c-.073.005-.292.025-.484.041-4.548.412-8.803 2.86-11.5 6.631-1.491 2.067-2.459 4.468-2.824 6.989-.129.88-.145 1.14-.145 2.333 0 1.192.016 1.448.145 2.328.871 6.011 5.147 11.057 10.943 12.927 1.043.333 2.136.563 3.381.704.484.052 2.577.052 3.061 0 2.152-.24 3.969-.771 5.767-1.688.276-.14.328-.177.291-.208-.88-1.161-1.744-2.323-2.609-3.495l-2.557-3.453-3.203-4.745c-1.068-1.588-2.14-3.172-3.229-4.744-.011 0-.025 2.109-.031 4.681-.011 4.505-.011 4.688-.068 4.792-.057.125-.151.229-.276.287-.099.047-.188.057-.661.057h-.541l-.141-.088c-.088-.057-.161-.136-.208-.229l-.068-.141.005-6.271.011-6.271.099-.125c.063-.077.141-.14.229-.187.131-.063.183-.073.724-.073.635 0 .74.025.907.208 1.296 1.932 2.588 3.869 3.859 5.812 2.079 3.152 4.917 7.453 6.312 9.563l2.537 3.839.125-.083c1.219-.813 2.328-1.781 3.285-2.885 2.016-2.308 3.324-5.147 3.767-8.177.129-.88.145-1.141.145-2.333 0-1.193-.016-1.448-.145-2.328-.871-6.011-5.147-11.057-10.943-12.928-1.084-.343-2.199-.577-3.328-.697-.303-.031-2.371-.068-2.631-.041zm6.547 9.677c.151.072.265.208.317.364.027.084.032 1.823.027 5.74l-.011 5.624-.989-1.52-.995-1.521v-4.083c0-2.647.011-4.131.025-4.204.047-.167.161-.307.313-.395.124-.063.172-.068.667-.068.463 0 .541.005.645.063z" />
-                </svg>
+                <FirebaseIcon className='w-10 lg:w-14 h-10 lg:h-14 '></FirebaseIcon>
+              </ButtonService>
+              <ButtonService index={5} tag="CMS">
+                <WorldpressIcon className='w-10 lg:w-14 h-10 lg:h-14 '></WorldpressIcon>
               </ButtonService>
             </ListRender>
           </ul>
-          <div className="col-span-2 row-start-3 max-w-sm mt-auto">
-            <ServiceDescription />
+          <div className="col-span-3 row-span-1 lg:row-span-2">
+            <FrontendBackground />
           </div>
-          <div className="col-span-3 row-span-2">
-            <BasicBg />
+          <div className="col-span-2 row-start-3 max-w-sm mt-auto relative w-full h-full">
+            <AnimateWrapper>
+              <ServiceDescription index={0} title={"Bases del Desarrollo Web"} className='absolute top-0 left-0'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisi ligula. Fusce quis neque convallis, tempus neque vitae, euismod arcu. Curabitur fermentum porta porttitor. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              </ServiceDescription >
+              <ServiceDescription index={1} title={"Aplicaciones con React"} className='absolute top-0 left-0'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisi ligula. Fusce quis neque convallis, tempus neque vitae, euismod arcu. Curabitur fermentum porta porttitor. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              </ServiceDescription >
+              <ServiceDescription index={2} title={"Aplicacioens con SSR "} className='absolute top-0 left-0'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisi ligula. Fusce quis neque convallis, tempus neque vitae, euismod arcu. Curabitur fermentum porta porttitor. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              </ServiceDescription >
+              <ServiceDescription index={3} title={"Estilizado y Maquetacion"} className='absolute top-0 left-0'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisi ligula. Fusce quis neque convallis, tempus neque vitae, euismod arcu. Curabitur fermentum porta porttitor. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              </ServiceDescription >
+              <ServiceDescription index={4} title={"Backend Serverless"} className='absolute top-0 left-0'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisi ligula. Fusce quis neque convallis, tempus neque vitae, euismod arcu. Curabitur fermentum porta porttitor. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              </ServiceDescription >
+              <ServiceDescription index={5} title={"Paginas con CMS"} className='absolute top-0 left-0'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisi ligula. Fusce quis neque convallis, tempus neque vitae, euismod arcu. Curabitur fermentum porta porttitor. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              </ServiceDescription >
+            </AnimateWrapper>
           </div>
         </div>
       </IndexContext>

@@ -5,6 +5,7 @@ import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import { ChevronUp } from 'react-feather';
 
 const itemVariants: Variants = {
   opened: {
@@ -15,7 +16,11 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
 };
 
-export default function LanguageBtn() {
+export default function LanguageBtn({
+  className
+}:{
+  className: string
+}) {
 
   const pathname = usePathname();
   const [currentLang, setCurrentLang] = useState('')
@@ -39,18 +44,18 @@ export default function LanguageBtn() {
   }
 
   return (
-    <div className='relative w-28 h-8 flex items-center'>
+    <div className={`relative w-32 h-9 flex items-center mx-3 ${className}`}>
       <motion.div 
-        className='border absolute border-gray-300 top-0 left-0 w-28 overflow-hidden shadow-sm'
+        className='border absolute border-slate-100 bg-white dark:bg-zinc-700 top-0 left-0 w-32 overflow-hidden shadow-sm'
         initial={isOpened? 'opened' : 'closed'}
         animate={isOpened? 'opened' : 'closed'}
         variants={{
           opened: {
-            maxHeight: `${30 * 3}px`, 
+            maxHeight: `${34 * 3}px`, 
             borderRadius: '0.25rem',
           },
           closed: {
-            maxHeight: `${30}px`,
+            maxHeight: `${34}px`,
             borderRadius: '1.5rem',
             transition: { type: "spring", stiffness: 300, damping: 24 }
           }
@@ -58,13 +63,13 @@ export default function LanguageBtn() {
         ref={containerRef}
         >
         <motion.button 
-          className="px-2 py-1 flex justify-between flex-row items-center text-sm text-gray-600 w-full" 
+          className="px-3 py-1 flex justify-between flex-row items-center text-sm w-full" 
           onClick={ _ => setIsOpened(!isOpened)}
           ref={toggleBtnRef}
           > 
           Languages
           <motion.div
-            className='inline-block '
+            className='inline-block text-blue-500'
             variants={{
               closed: { rotate: 180 },
               opened: { rotate: 0 }
@@ -72,9 +77,7 @@ export default function LanguageBtn() {
             transition={{ duration: 0.2 }}
             style={{ originY: 0.50 }}
           >
-            <svg className='fill-gray-600' width="15" height="15" viewBox="0 0 20 20">
-              <path d="M0 7 L 20 7 L 10 16" />
-            </svg>
+            <ChevronUp />
           </motion.div>
         </motion.button>
         <hr className='mx-2'></hr>

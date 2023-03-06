@@ -7,7 +7,11 @@ import NavMobileBlurBackground from "./NavMobileBlurBackground"
 import NavMobileSidebarBtn from "./NavMobileSidebarBtn"
 import NavMobileSidebar from "./NavMobileSidebar"
 
-export default function NavMobileMenu(){
+export default function NavMobileMenu({
+  className
+}:{
+  className?: string
+}){
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,6 +19,7 @@ export default function NavMobileMenu(){
     <motion.nav 
       initial={false}
       animate={isOpen? 'opened' : 'closed'}
+      className={`flex items-center ${className}`}
        >
       <NavMobileBlurBackground  handleClick={() => setIsOpen(false)}/>
       <NavMobileSidebar handleClick={() => setIsOpen(false)} />

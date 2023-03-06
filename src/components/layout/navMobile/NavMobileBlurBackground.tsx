@@ -11,7 +11,9 @@ export default function NavMobileBlurBackground ({
   const variants:Variants = {
     closed: {
       backdropFilter: "blur(0px)",
-      display: 'none'
+      transitionEnd:{
+        display: 'none'
+      }
     },
     opened: {
       backdropFilter: 'blur(3px)',

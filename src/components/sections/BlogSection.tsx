@@ -6,12 +6,12 @@ import Flashcard from "../flashcards/ArticleFlashcard";
 export default function BlogSection() {
   return (
     <section className="max-w-7xl mx-auto mt-32">
-      <div className="flex flex-row items-end gap-3">
+      <div className="flex flex-row items-end gap-3 px-3 xl:px-0">
         <h2 className="text-5xl block font-bold text-slate-900 dark:text-zinc-100">Blog</h2>
         <Link className=' hidden sm:block text-lg text-blue-500' href={'/'}>Ver todo</Link>
       </div>
-      <p className="max-w-2xl mt-4">Ademas de Programar, tambien dispongo de mi blog personal en el que vot compartiendo lo que voy aprendiendo de este dolor pero grandioso mundo del codigo</p>
-      <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 mt-12">
+      <p className="max-w-2xl mt-4 px-3 xl:px-0 text-base sm:text-lg">Ademas de Programar, tambien dispongo de mi blog personal en el que vot compartiendo lo que voy aprendiendo de este dolor pero grandioso mundo del codigo</p>
+      <div className="flex flex-col px-0 sm:px-3 xl:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3  gap-1 sm:gap-2 md:gap-4 mt-12">
         <Flashcard 
           title="Mi Portofoio: una gran y una experiencia"
           description="Quienes conocer como se desarrollo esta pagina? Todo el proceso explicado y sus dificultades que hice para desarrolar mi portfolio<"
@@ -25,7 +25,7 @@ export default function BlogSection() {
           description="Si apenas estas comenzando, cada paso descrito aqui te ayudara a ser mejor programor para el dia a dia"
           category="Aprendizaje" date={""}></Flashcard>
       </div>
-      <div className='px-3'>
+      <div className='px-3 mt-6'>
         <button className='flex flex-row gap-3 mx-auto w-full text-blue-500 py-4 border-2 border-blue-500 font-bold rounded-lg sm:hidden justify-center'>
           VISITAR BLOG
           <ChevronsRight></ChevronsRight>

@@ -1,4 +1,5 @@
 import AboutMeResume from "@root/components/sections/AboutMeResume";
+import BackendService from "@root/components/sections/BackendServices";
 import FrontendService from "@root/components/sections/FrontendServices";
 import PortfolioSection from "@root/components/sections/PortfolioSection";
 import { PageWrapper } from "@root/contexts/TransitionContext";
@@ -10,12 +11,13 @@ export default function Home() {
   return (
     <>
       <PageWrapper key={'home-page'}>
-        <main className="w-full mt-40 sm:mt-32">
+        <main className="w-full">
           <HeaderSection></HeaderSection>
           <AboutMeResume></AboutMeResume>
-          {<FrontendService></FrontendService>}
-          {<PortfolioSection></PortfolioSection>} 
-          {<BlogSection ></BlogSection>}
+          <FrontendService></FrontendService>
+          <BackendService></BackendService>
+          <PortfolioSection></PortfolioSection>
+          <BlogSection ></BlogSection>
         </main>
       </PageWrapper>
     </>

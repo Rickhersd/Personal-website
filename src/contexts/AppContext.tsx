@@ -31,7 +31,7 @@ export default function AppProvider({
 
   return (
     <IntlProvider locale={shortLocale} messages={messages()} onError={() => null}>
-      <ThemeProvider>
+      <ThemeProvider attribute="class">
         <InternalNavProvider pathroot={'dashboard/skills'}>
           {children}
         </InternalNavProvider>

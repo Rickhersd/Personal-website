@@ -17,7 +17,7 @@ export default function NavMobileSidebar({
       className='fixed top-0 right-0 flex flex-col justify-between  min-h-screen w-72 bg-slate-50'
       > 
       <div className='px-4'>
-        <div className='pb-4 pt-4 flex justify-between'>
+        <div className='pb-4 pt-4 flex justify-between items-center'>
           <Link href="home">
             <LogotypeIcon className='w-48 h-10'></LogotypeIcon>
           </Link>

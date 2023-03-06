@@ -1,18 +1,25 @@
-import LanguageBtn from "@root/components/buttons/Language_Button";
+import AboutMeResume from "@root/components/sections/AboutMeResume";
+import BackendService from "@root/components/sections/BackendServices";
+import FrontendService from "@root/components/sections/FrontendServices";
+import PortfolioSection from "@root/components/sections/PortfolioSection";
+import { PageWrapper } from "@root/contexts/TransitionContext";
 import React from "react";
-import BlogSection from "../../../components/BlogSection";
-import HeaderSection from "../../../components/HeaderSection";
-import ProjectsSection from "../../../components/ProjectsSection";
-import Services from "../../../components/services";
+import BlogSection from "../../../components/sections/BlogSection";
+import HeaderSection from "../../../components/sections/HeaderSection";
 
 export default function Home() {
   return (
     <>
-      <main className="w-full m-auto">
-        <HeaderSection></HeaderSection>
-        {/*<Services></Services>*/}   
-        {/*<BlogSection ></BlogSection>*/}
-      </main>
+      <PageWrapper key={'home-page'}>
+        <main className="w-full">
+          <HeaderSection></HeaderSection>
+          <AboutMeResume></AboutMeResume>
+          <FrontendService></FrontendService>
+          <BackendService></BackendService>
+          <PortfolioSection></PortfolioSection>
+          <BlogSection ></BlogSection>
+        </main>
+      </PageWrapper>
     </>
   )
 }

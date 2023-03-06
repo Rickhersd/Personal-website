@@ -23,7 +23,6 @@ export default function NavMobileSidebarWrapper({
     closed: {
       clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
       transition: {
-        delay: 0.5,
         type: "spring",
         stiffness: 400,
         damping: 40

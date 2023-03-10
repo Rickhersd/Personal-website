@@ -1,7 +1,7 @@
 import { db } from "@root/ts/firebase"
 import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore"
 
-export default function FetchDoc<T>(path:string, model:new(...args: any) => T, docId:string | null = null):Promise<T[] | void>{
+export default function FetchDoc<T>(path:string, model:new(...args: any) => T, docId:string | null = null):Promise<T[]>{
 
   const getDocuments = async ():Promise<T[]> => {
     let dataList:Array<T> = [];

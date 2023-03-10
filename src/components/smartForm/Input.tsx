@@ -23,8 +23,6 @@ export default function Input ({
 
   const {isEmpty, isBlur, setIsEmpty, setIsBlur} = useFieldset();
 
-  console.log(register)
-
   const handleChange = (e:ChangeEvent) => {
     const target = e.target as HTMLInputElement
     if ((target.value != '' && isEmpty == false) || isBlur == false) return; 
@@ -44,9 +42,6 @@ export default function Input ({
     onChange:(e) => handleChange(e),
     onBlur:() => handleBlur(),
   });
-
-    console.log(name)
-    console.log(options)
 
   return <>
     <motion.input

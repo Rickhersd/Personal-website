@@ -1,0 +1,22 @@
+.content h1{
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+.content h2{
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}  
+
+.content p{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+} 
+  

@@ -1,0 +1,23 @@
+.Editor-header-one{
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+.Editor-header-two{
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}  
+
+.Editor-header-three{
+  font-size: 2rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+} 
+
+  
+.Editor-blockquote{
+  margin: 1rem 2rem
+}

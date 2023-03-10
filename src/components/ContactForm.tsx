@@ -10,6 +10,7 @@ import Form from './smartForm/Form';
 import Textarea from './smartForm/Textarea';
 import FieldsetProvider from '@root/contexts/FieldsetContext';
 import Label from '@root/components/smartForm/Label'
+import Submit from './smartForm/Submit';
 
 const SERVICES_ID = "service_jp500qr";
 const TEMPLATE_ID = "template_gsuoasf";
@@ -48,10 +49,6 @@ export default function ContactForm({
     } catch (err){ 
       setIsSending(false)
     }
-  }
-
-  const handleOnBlur = (e:FocusEvent) => {
-    e.target.parentElement?.setAttribute('data-focused', 'false')
   }
 
   const loader = (
@@ -127,7 +124,7 @@ export default function ContactForm({
         <label className='text-slate-700 text-base sm:text-lg'>He leido y acepto la politica de privacidad</label>
         <input type="checkbox"></input>
       </fieldset>
-      <input className="max-w-full sm:max-w-xs w-full rounded-lg bg-sky-600 font-medium block m-auto py-4 text-white" type="submit" value="ENVIAR"></input>
+      <Submit className='m-auto'>Enviar</Submit>
     </form>
   </>
 }

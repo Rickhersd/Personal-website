@@ -2,14 +2,14 @@
 
 import useFilter from "@root/hooks/useFilter";
 import useGetDoc from "@root/hooks/FetchDoc";
-import Link from "next/link";
 import { useEffect } from "react";
 import AddSkillBtn from "./add/addSkillBtn";
-import SkillElement from "./SkillElement";
+import SkillElement from "@root/components/SkillElement";
+import Skill from "@root/models/skills";
 
-export default function ListSkills(){
+export default async function ListSkills(){
 
-  //const [response, listSkills] = useGetDoc('skills', Skill)
+  const listSkills = await useGetDoc('skills', Skill)
   const [currentFilter, filter] = useFilter(listSkills)
 
   useEffect(()=>{
@@ -17,7 +17,6 @@ export default function ListSkills(){
     console.log(filter.filter())
   },[listSkills, currentFilter])
   
-
   filter.filter()
 
   return (

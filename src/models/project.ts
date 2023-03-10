@@ -20,7 +20,4 @@ export default class Project {
     this.publishedOn = objData.publishedOn;
   }
 
-  static getCollectionID():string {
-    return "proyects"
-  }
 }

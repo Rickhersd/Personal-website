@@ -1,7 +1,6 @@
 'use client'
 
 import { useInternalNav } from "@root/contexts/InternalNavContext";
-import { useRouter } from "next/navigation";
 import { createContext, Fragment, Key, useCallback, useContext, useEffect, useState } from "react";
 
 type dropdownChildList = {

@@ -14,10 +14,7 @@ export default async function ListSkills(){
 
   useEffect(()=>{
     filter.setList(listSkills)
-    console.log(filter.filter())
   },[listSkills, currentFilter])
-  
-  filter.filter()
 
   return (
     <div>
@@ -37,7 +34,7 @@ export default async function ListSkills(){
       </ul>
       <ul className='list-skill__list'>
       {!(listSkills.length == 0) ?
-        filter.filter().map((skill, index) => (
+        filter.filterByField('type').map((skill, index) => (
           <SkillElement {...skill} key={index}></SkillElement>
         ))
         

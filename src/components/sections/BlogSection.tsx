@@ -1,9 +1,13 @@
+import Article from '@root/models/article';
 import Link from 'next/link';
 import React from 'react'
 import { ChevronsRight } from 'react-feather';
 import Flashcard from "../flashcards/ArticleFlashcard";
 
-export default function BlogSection() {
+export default async function BlogSection({promise}:{promise:Promise<Article[]>}) {
+
+  const recentArticles = await promise;
+
   return (
     <section className="max-w-7xl mx-auto mt-32">
       <div className="flex flex-row items-end gap-3 px-3 xl:px-0">
@@ -11,20 +15,19 @@ export default function BlogSection() {
         <Link className=' hidden sm:block text-lg text-blue-500' href={'/'}>Ver todo</Link>
       </div>
       <p className="max-w-2xl mt-4 px-3 xl:px-0 text-base sm:text-lg">Ademas de Programar, tambien dispongo de mi blog personal en el que vot compartiendo lo que voy aprendiendo de este dolor pero grandioso mundo del codigo</p>
-      <div className="flex flex-col px-0 sm:px-3 xl:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3  gap-1 sm:gap-2 md:gap-4 mt-12">
-        <Flashcard 
-          title="Mi Portofoio: una gran y una experiencia"
-          description="Quienes conocer como se desarrollo esta pagina? Todo el proceso explicado y sus dificultades que hice para desarrolar mi portfolio<"
-          category="Personal" date={""}></Flashcard>
-        <Flashcard 
-          title="Las matematicas y la programacion"
-          description="Algunos dicen, otros diran que si. Todo lo relacionado entre las matematicas y la programacion"
-          category="Reflexion" date={""}></Flashcard>
-        <Flashcard 
-          title="Mejor programador apenas comenzando"
-          description="Si apenas estas comenzando, cada paso descrito aqui te ayudara a ser mejor programor para el dia a dia"
-          category="Aprendizaje" date={""}></Flashcard>
-      </div>
+      <ul className="flex flex-col px-0 sm:px-3 xl:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3  gap-1 sm:gap-2 md:gap-4 mt-12">
+        {recentArticles.map(article => {
+          return <li key={article.id}>
+            <Flashcard 
+            title={article.title}
+            summary={article.summary}
+            category={article.category}
+            slug={article.slug}
+            date={article.publishedOn}
+            />
+          </li>
+        })}
+      </ul>
       <div className='px-3 mt-6'>
         <button className='flex flex-row gap-3 mx-auto w-full text-blue-500 py-4 border-2 border-blue-500 font-bold rounded-lg sm:hidden justify-center'>
           VISITAR BLOG

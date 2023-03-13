@@ -1,7 +1,7 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
 const useFilter = <T extends {}>(list: Array<T>):[string, {
-  filter: () => T[],
+  filterByField: (field:string) => T[],
   setList:(array: Array<T>) => void,
   setFilter: (filter: string) => void
 }] => {
@@ -9,12 +9,12 @@ const useFilter = <T extends {}>(list: Array<T>):[string, {
   const [currentFilter, setCurrentFilter] = useState('All');
   const [currentList, setCurrentList] = useState(list);
 
-  const filter = () => {
+  const filterByField = (field:string) => {
     if (currentFilter == 'All') return currentList;
     let filteredList = new Array<T>;
     for(let i = 0; i < currentList.length; i++){
       const pair = new Map(Object.entries(currentList[i]));
-      if (pair.get('type') == currentFilter){
+      if (pair.get(field) == currentFilter){
         filteredList.push(currentList[i])
       }
     }
@@ -29,7 +29,7 @@ const useFilter = <T extends {}>(list: Array<T>):[string, {
     setCurrentFilter(filter)
   }
 
-  return [currentFilter, {filter, setList, setFilter}]
+  return [currentFilter, {filterByField, setList, setFilter}]
 }
 
 export default useFilter

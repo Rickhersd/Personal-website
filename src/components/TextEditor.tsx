@@ -12,7 +12,11 @@ import InlineStyleButto from './editor/InlineStyleButton';
 import BlockStyleButton from './editor/blockStyles/BlockStyleButton';
 import HeaderStyleDropdown from './editor/blockStyles/BlockStyleDropdown';
 
-export default function TextEditor() {
+export default function TextEditor({
+  className
+}:{
+  className?:string
+}) {
 
   const {editorState, setEditorState, getBlockStyle} = useEditor() 
 
@@ -51,7 +55,7 @@ export default function TextEditor() {
   }
 
   return <>
-    <div className='w-full shadow-lg rounded-xl border border-gray-300 overflow-hidden'>
+    <div className={`w-full shadow-lg rounded-xl border border-gray-300 overflow-hidden ${className}`}>
       <div className='w-full flex border-b border-b-gray-300'>
         <HeaderStyleDropdown>
           <BlockStyleDropdownOption value={''}>Current Header</BlockStyleDropdownOption>

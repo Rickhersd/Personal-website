@@ -14,24 +14,25 @@ export default function RootLayout({
         <nav className='min-w-[15rem] max-h-screen h-screen overflow-scroll shadow-xl p-4 bg-white'>
           <NavSection Icon={Briefcase}>Portfolio</NavSection>
           <ul>
-            <NavLink>Todos</NavLink>
-            <NavLink>Registrar</NavLink>
+            <NavLink href='dashboard'>Todos</NavLink>
+            <NavLink href='dashboard'>Registrar</NavLink>
           </ul>
           <NavSection Icon={PenTool}>Articulos</NavSection>
           <ul>
-            <NavLink>Todos</NavLink>
-            <NavLink>Crear</NavLink>
+            <NavLink href='dashboard/articles'>Todos</NavLink>
+            <NavLink href='dashboard/articles/add'>Crear</NavLink>
+            <NavLink href='dashboard/articles/tags'>Etiquetas</NavLink>
           </ul>
           <NavSection Icon={User}>Usuarios</NavSection>
           <ul>
-            <NavLink>Todos</NavLink>
-            <NavLink>Permisos</NavLink>
-            <NavLink>Registrar</NavLink>
+            <NavLink href='dashboard'>Todos</NavLink>
+            <NavLink href='dashboard'>Permisos</NavLink>
+            <NavLink href='dashboard'>Registrar</NavLink>
           </ul>
           <NavSection Icon={Code}>Habilidades</NavSection>
           <ul>
-            <NavLink>Todas</NavLink>
-            <NavLink>Registrar</NavLink>
+            <NavLink href='dashboard/skills'>Todas</NavLink>
+            <NavLink href='dashboard/skills/add'>Registrar</NavLink>
           </ul>
         </nav>
         <main className='w-full max-h-screen h-screen overflow-scroll items-center'>
@@ -41,12 +42,11 @@ export default function RootLayout({
               Inicio
             </Link>
             <h1 className='text-center p-4 text-xl'>Bienvenido, Ricardo!</h1>
-            <div className='ml-auto px-4'>
+            <div className='ml-auto px-4 flex flex-row items-center'>
               <LanguageBtn className="hidden sm:block" ></LanguageBtn>
               <Darkmode_btn></Darkmode_btn>
             </div>
           </div>
-          <hr></hr>
           {children}
         </main>
       </div>   
@@ -72,14 +72,17 @@ function NavSection({
 
 function NavLink({
   children,
+  href
 }:{
   children:string,
+  href:string
 }){
   
-  return <li>
-    <button className="w-full px-7 py-1 border-l border-l-gray-200 hover:border-l-blue-500">
+  return <li className='flex flex-row gap-2'>
+    <span className='w-5 h-5'></span>
+    <Link href={href} className="w-full text-left px-2 py-1 border-l border-l-gray-200 hover:border-l-blue-500">
       {children}
-    </button>
+    </Link>
   </li>
 }
 

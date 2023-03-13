@@ -1,13 +1,16 @@
 import React from 'react'
 import { storage } from '@root/ts/firebase'
+import FetchDoc from '@root/hooks/FetchDoc';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { marked } from 'marked';
 import style from './content.module.css'
+import Article from '@root/models/article';
+import { where } from 'firebase/firestore';
 
 export async function generateStaticParams() {
-  return [{ id: 'example'},{id: 'example2'}, {id: 'example3'}]
+  const articles = await FetchDoc('articles', Article, null, where('state', '==', 'checked'))
+  return  articles.map(article => ({slug: article.slug}))
 }
-
 
 async function getMarkdownFile(blogId:string){
  
@@ -23,13 +26,12 @@ export default async function blogPage({
   params
 }:{
   params:{
-    id:string
+    slug:string,
   }
 }) {
 
-  const content = await getMarkdownFile(params.id)
+  const content = await getMarkdownFile(params.slug)
   const html = marked.parse(content)
-
   const calculateReadingTime = (text:string):string => {
     const wordsPerMinute = 200;
     

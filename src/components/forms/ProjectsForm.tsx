@@ -1,15 +1,18 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
 import useEditor from '@root/hooks/useEditor';
 import useAddDoc from '@root/hooks/useAddDoc';
 import { ref, uploadBytesResumable } from "firebase/storage";
-import { convertToRaw, Editor } from 'draft-js';
+import { convertToRaw } from 'draft-js';
 import { draftToMarkdown } from 'markdown-draft-js';
 import { RegisterOptions, SubmitHandler, useForm, UseFormRegister } from 'react-hook-form';
 import { Timestamp } from 'firebase/firestore';
 import { storage } from '@root/ts/firebase';
+
 import Submit from '../smartForm/Submit';
+import { SelectInstance } from 'react-select'
+import TagsSelecter from '../smartForm/TagsSelecter';
 
 interface IFormInput {
   title: string;
@@ -17,12 +20,23 @@ interface IFormInput {
   imageFilePath: string, 
   category: string
   summary: string,
-  contentFile: string
+  contentFile: string,
+  tags: string[]
 }
 
-export default function ProjectsForm() {
+interface Ioptions{
+  value: string,
+  label: string
+}
+
+export default function ProjectsForm({
+  className
+}:{
+  className?:string
+}) {
 
   const {handleGetContent} = useEditor();
+  const asyncRef = useRef<SelectInstance<Ioptions> | null>(null);
 
   const { register, handleSubmit} = useForm({
     defaultValues: {
@@ -32,6 +46,7 @@ export default function ProjectsForm() {
       category: '',
       summary:'',
       contentFile: '',
+      tags: ['']
     }
   });
 
@@ -47,12 +62,13 @@ export default function ProjectsForm() {
     addDocument({
       'title': data.title,
       'author': data.author,
-      'contentFilePath': formatUrlFile(data.title as string), 
+      'slug': formatUrlFile(data.title as string), 
       'imageFilePath': '', 
-      'tags': ['web', 'dev', 'portfolio'], 
+      'tags': asyncRef.current?.getValue().map(option => option.value), 
       'category': data.category, 
       'summary': data.summary, 
-      'publishedOn': Timestamp.fromDate(new Date(getCurrentDate()))
+      'publishedOn': Timestamp.fromDate(new Date(getCurrentDate())),
+      'state': 'unchecked'
     })
   }
 
@@ -111,7 +127,7 @@ export default function ProjectsForm() {
   }
 
   return <>
-    <form className='flex flex-col gap-2' onSubmit={handleSubmit(onSubmit)}>
+    <form className={`flex flex-col gap-2 ${className}`} onSubmit={handleSubmit(onSubmit)}>
       <Fieldset>
         <Label htmlFor="title">Titulo</Label>
         <Input type='text' name="title" register={register} options={{maxLength:96, required:true}}  />
@@ -126,13 +142,17 @@ export default function ProjectsForm() {
       </Fieldset>
       <Fieldset>
         <Label htmlFor='category'>Category</Label>
-        <select {...register('category')} className= "p-2 w-72 border border-gray-200 bg-white" >
+        <select {...register('category',{required:true})} className= "p-2 border border-gray-200 bg-white w-full" >
           <option>Frontend</option>
           <option>Backend</option>
           <option>Other</option>
           <option>CMS</option>
         </select>
-      </Fieldset>        
+      </Fieldset>
+      <Fieldset>
+        <Label>Etiquetas</Label>
+        <TagsSelecter ref={asyncRef}></TagsSelecter>
+      </Fieldset> 
       <fieldset>
         <Submit className="ml-auto">Crear Articulo</Submit>
       </fieldset>
@@ -145,7 +165,7 @@ function Label ({
   htmlFor
 }:{
   children:React.ReactNode,
-  htmlFor: string
+  htmlFor?: string
 }){
 
   return <>
@@ -155,7 +175,7 @@ function Label ({
 }
 function Fieldset ({children}:{children:React.ReactNode}){
   return <>
-    <fieldset className="flex flex-row w-full gap-4 items-start">{children}</fieldset>
+    <fieldset className="flex flex-row w-full gap-4 items-start ">{children}</fieldset>
   </>
 }
 
@@ -165,7 +185,7 @@ function Input ({
   name, 
   type
 }:{
-  register: UseFormRegister<{ title: string; author: string; imageFilePath: string; category: string; summary: string; contentFile: string; }>,
+  register: UseFormRegister<{ title: string; author: string; imageFilePath: string; category: string; summary: string; contentFile: string; tags: string[] }>,
   options?: RegisterOptions,
   name: "summary" | "title" | "imageFilePath" | "author" | "category" | "contentFile",
   type: string

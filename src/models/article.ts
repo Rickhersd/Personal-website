@@ -3,39 +3,39 @@ import { Timestamp } from "firebase/firestore";
 interface dataInterface {
   title:string,
   author: string, 
-  readingTime: string,
-  contentFilePath:string, 
+  slug:string, 
   imageFilePath:string, 
   tags:string[], 
   category:string, 
-  summary: string;
-  publishedOn:Timestamp | Date
+  summary: string,
+  publishedOn:Timestamp | Date,
+  state: 'unchecked' | 'checked'
 }
 
 export default class Article {
 
   id: string;
   author: string;
-  readingTime: string;
   title:string;
-  contentFilePath: string; 
+  slug: string; 
   imageFilePath:string;
   tags:string[];
   category: string;
   summary: string;
   publishedOn: Timestamp | Date;
+  state: 'unchecked' | 'checked'
   
   constructor (id:string, data:dataInterface){
     this.id = id;
     this.author =  data.author;
-    this.readingTime = data.readingTime;
     this.title = data.title;
-    this.contentFilePath = data.contentFilePath;
+    this.slug = data.slug;
     this.imageFilePath = data.imageFilePath;
     this.tags = data.tags;
     this.category = data.category;
     this.summary = data.summary;
     this.publishedOn = data.publishedOn;
+    this.state = data.state;
   }
 
 }

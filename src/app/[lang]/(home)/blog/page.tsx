@@ -25,7 +25,7 @@ export default async function Page() {
   </>
 }
 
-export async function ArticleList({promise}:{promise: Promise<ArticleClass[]>}){
+async function ArticleList({promise}:{promise: Promise<ArticleClass[]>}){
 
   const articlesList = await promise;
   const list = JSON.stringify(articlesList)

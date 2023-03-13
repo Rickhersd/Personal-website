@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Project from '../../models/project';
-import useDatabase from '../../hooks/useDatabase';
+import FetchDoc from '../../hooks/FetchDoc';
 
 function ProjectList() {
 
   const [projectsList, setProjectsList] = useState<Array<Project> >([]);
-  const {response, getDocuments, deleteDocument} = useDatabase('proyects', Project)
 
   useEffect(() => {
-    getDocuments().then(res => setProjectsList(res as Project[])); 
+    FetchDoc('projects', Project)
+      .then(res => setProjectsList(res))
   },[])
 
   return (
@@ -20,9 +19,6 @@ function ProjectList() {
           <p>Title : {project.title}</p>
           <p>Description: {project.description} </p>
           <p>Technologies: {project.technologies}</p>
-          <Link to={"/project/"+project.id}>View</Link>
-          <Link to={"/project/edit/"+project.id}>Edit</Link>
-          <button onClick={() => deleteDocument(project.id)}>Borrar Proyecto</button>
         </div>          
       ))}
     </div>

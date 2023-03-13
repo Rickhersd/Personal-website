@@ -4,10 +4,6 @@ import React, { createRef, DragEvent, FormEvent, useState } from 'react'
 import StringToJSX from '@root/ts/stringToJSXParser';
 import useAddDoc from '@root/hooks/useAddDoc';
 
-window.ondrop = (e) => {
-  e.preventDefault()
-  console.log('me ejecute')
-}
 
 export default function AddSkill() {
 
@@ -94,7 +90,7 @@ export default function AddSkill() {
       <div className="add-skill__preview">
         <div className="add-skill__preview-card"> 
           <h1 className="add-skill__preview-title">Preview</h1>
-          <StringToJSX domString={svgContent as string} className="add-skill__preview-image"></StringToJSX>
+          {/* <StringToJSX domString={svgContent as string} className="add-skill__preview-image"></StringToJSX> */}
           <div className="add-skill__preview-info">
             <div className="add-skill__preview-info-name">{skillName}</div>
             <div className="add-skill__preview-info-description">{skillDesc}</div>

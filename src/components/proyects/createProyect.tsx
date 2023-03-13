@@ -15,7 +15,7 @@ export default function CreateProyect() {
     e.preventDefault();
     // Add data to the store
     try {
-      const docRef = await addDoc(collection(db, "proyects"), {
+      const docRef = await addDoc(collection(db, "projects"), {
         title: nameRef.current?.value,
         description: descriptionRef.current?.value,
         technologies: technologiesRef.current?.value, 

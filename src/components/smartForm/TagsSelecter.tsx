@@ -5,7 +5,6 @@ import AsyncSelect from 'react-select/async';
 import FetchDoc from '@root/hooks/FetchDoc';
 import Tag from '@root/models/tag';
 import { GroupBase, LoadingIndicatorProps, SelectInstance } from 'react-select';
-import Spinner from '@atlaskit/spinner';
 
 interface Ioptions{
   value: string,
@@ -38,7 +37,7 @@ const TagsSelecter = forwardRef(({}:{},ref:React.ForwardedRef<SelectInstance<Iop
 
   const LoadingIndicator = (props: LoadingIndicatorProps<Ioptions>) => {
     return <>
-        <Spinner></Spinner>
+        <div>LL</div>
       </>;
   };
 

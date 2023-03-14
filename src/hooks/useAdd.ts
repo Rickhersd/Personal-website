@@ -2,7 +2,7 @@ import { db } from "@root/ts/firebase"
 import { addDoc, collection, } from "firebase/firestore"
 import { SetStateAction, useState } from "react"
 
-export default function useAddDoc (path:string):[string, (data: {}) => Promise<SetStateAction<string> | void>]{
+export default function useAdd (path:string):[string, (data: {}) => Promise<SetStateAction<string> | void>]{
   const [response, setResponse] = useState<string>('')
 
   const addDocument = async (data:{}):Promise<SetStateAction<string> | void > => {

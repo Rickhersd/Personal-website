@@ -1,8 +1,8 @@
 'use client'
 
 import FetchDoc from '@root/hooks/FetchDoc';
-import useAddDoc from '@root/hooks/useAddDoc'
-import useDeleteDoc from '@root/hooks/useDeleteDoc';
+import useAddDoc from '@root/hooks/useAdd'
+import useDeleteDoc from '@root/hooks/useDelete';
 import Tag from '@root/models/tag';
 import React, { useState, useEffect } from 'react'
 import { X } from 'react-feather';
@@ -13,7 +13,7 @@ interface Itag{
   tag: string
 }
 
-export default function page() {
+export default function Page() {
 
   const [resAdd, addDocument] = useAddDoc('tags')
   const [resDel, deleteDocument] = useDeleteDoc('tags')

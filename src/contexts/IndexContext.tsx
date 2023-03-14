@@ -29,7 +29,7 @@ const defaultContext: indexI = {
 }
 
 //hook
-export const useIndex = () => useContext(IndexContext) ?? defaultContext
+
 
 //context provider
 const IndexProvider = ({
@@ -97,4 +97,5 @@ const IndexProvider = ({
   )
 }
 
-export default IndexProvider
+const useIndex = () => ({...useContext(IndexContext) ?? defaultContext, IndexProvider})
+export default useIndex;

@@ -5,7 +5,7 @@ import TextEditor from '@root/components/TextEditor';
 import useEditor from '@root/hooks/useEditor';
 import ProjectsForm from '@root/components/forms/ProjectsForm';
 
-export default function page() {
+export default function Page() {
 
   const {EditorProvider} = useEditor()
   

@@ -1,6 +1,5 @@
 'use client'
 
-import { useDimensions } from '@root/hooks/useDimesions';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
@@ -29,14 +28,11 @@ export default function LanguageBtn({
   const toggleBtnRef = useRef<HTMLButtonElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [toggleBtnSize] = useDimensions(toggleBtnRef );
-
   useEffect(()=>{
     const locale = pathname?.split('/')[0];
     const defaultLocale = 'es';
-    setCurrentLang(locale ?? defaultLocale)
-    
-  },)
+    setCurrentLang(locale ?? defaultLocale) 
+  },[])
 
   const createPath = (locale:string) => {
     const path = pathname?.slice(4)

@@ -8,7 +8,6 @@ import React, {
   ReactNode,
   useMemo,
   useCallback,
-  useEffect,
   Dispatch,
   SetStateAction
 } from 'react'
@@ -57,6 +56,10 @@ const EditorProvider = ({
 }):JSX.Element => {
   if (checkPrevContextInstance()) return <>{children}</>
 
+  function checkPrevContextInstance():boolean{
+    return useContext(EditorContext)? true: false;
+  }
+
   function getBlockStyle(block:ContentBlock):string {
     switch (block.getType()) {
      case "blockquote":
@@ -71,10 +74,6 @@ const EditorProvider = ({
       return '';
     }
    }
-
-  function checkPrevContextInstance():boolean{
-    return useContext(EditorContext)? true: false;
-  }
 
   const [editorState, setEditorState] = useState(
     () => EditorState.createWithContent(emptyContentState),

@@ -14,12 +14,13 @@ import TailwindIcon from "@root/svgs/Tailwind.svg"
 import FirebaseIcon from "@root/svgs/Firebase.svg"
 import WorldpressIcon from "@root/svgs/Worldpress.svg"
 import AnimateWrapper from "../AnimateWrapper";
+import IndexWrapper from "../IndexWrapper";
 
 export default function FrontendService() {
 
   return <>
     <section className="py-20 px-3">
-      <IndexContext>
+      <IndexWrapper>
         <div className="flex flex-col sm:grid sm:col-span-4 lg:grid-cols-5 m-auto relative max-w-7xl gap-4 lg:gap-0">
           <div className="col-span-5 flex-col flex">
             <h1 className="text-4xl sm:text-5xl text-slate-900 font-bold mt-8 dark:text-zinc-100">Desarrollador Frontend</h1>
@@ -75,7 +76,7 @@ export default function FrontendService() {
             </AnimateWrapper>
           </div>
         </div>
-      </IndexContext>
+      </IndexWrapper>
     </section>
   </>;
 }

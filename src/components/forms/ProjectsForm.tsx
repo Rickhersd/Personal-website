@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 import useEditor from '@root/hooks/useEditor';
-import useAddDoc from '@root/hooks/useAddDoc';
+import useAddDoc from '@root/hooks/useAdd';
 import { ref, uploadBytesResumable } from "firebase/storage";
 import { convertToRaw } from 'draft-js';
 import { draftToMarkdown } from 'markdown-draft-js';
@@ -12,7 +12,7 @@ import { storage } from '@root/ts/firebase';
 
 import Submit from '../smartForm/Submit';
 import { SelectInstance } from 'react-select'
-import TagsSelecter from '../smartForm/TagsSelecter';
+import TagsSelecter from '../smartForm/TagSelector';
 
 interface IFormInput {
   title: string;

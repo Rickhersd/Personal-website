@@ -11,7 +11,7 @@ interface Ioptions{
   label: string
 }
 
-const TagsSelecter = forwardRef(({}:{},ref:React.ForwardedRef<SelectInstance<Ioptions, false, GroupBase<Ioptions>> | null>) => {
+const TagSelector = forwardRef((_,ref:React.ForwardedRef<SelectInstance<Ioptions, false, GroupBase<Ioptions>> | null>) => {
 
   const filterTags = (inputValue: string, tags:Tag[]) => {
     const options = tagsToOptions(tags)
@@ -55,5 +55,7 @@ const TagsSelecter = forwardRef(({}:{},ref:React.ForwardedRef<SelectInstance<Iop
   />
   );
 })
+
+TagSelector.displayName = "TagSelector"
  
-export default TagsSelecter
+export default TagSelector

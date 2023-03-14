@@ -1,5 +1,6 @@
 import { Timestamp } from "firebase/firestore";
 import Link from "next/link";
+import Image from "next/image"
 import { Folder } from "react-feather";
 
 const Flashcard = ({
@@ -24,7 +25,7 @@ const Flashcard = ({
       className="shadow flex flex-col justify-between text-left bg-white dark:bg-zinc-700 transition-all hover:scale-105 hover:shadow-lg"
     >
       <div className="flex flex-col justify-between">
-        <img src='/StockSnap_1STVFMTBJY-min.jpg' className='aspect-video bg-slate-300' alt='Proyect-img'></img>
+        <Image src='/StockSnap_1STVFMTBJY-min.jpg' className='aspect-video bg-slate-300' alt='Proyect-img'></Image>
         <div className="p-3 sm:p-4 gap-3">
           <h3 className="text-3xl font-semibold text-gray-900 dark:text-zinc-100">{title}</h3>
           <p className="text-base sm:text-lg py-2">{summary}</p> 

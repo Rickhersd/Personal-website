@@ -5,10 +5,10 @@ import { useState, useEffect } from "react";
 
 import ArticleClass from "@root/models/article";
 import { Timestamp } from "firebase/firestore";
-import useDeleteDoc from "@root/hooks/useDeleteDoc";
+import useDeleteDoc from "@root/hooks/useDelete";
 import { Edit, Trash } from "react-feather";
 import useFilter from "@root/hooks/useFilter";
-import useUpdateDoc from "@root/hooks/useUpdateDoc";
+import useUpdateDoc from "@root/hooks/useUpdate";
 import React from "react";
 
 export default function Page(){

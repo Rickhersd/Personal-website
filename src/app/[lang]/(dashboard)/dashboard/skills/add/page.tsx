@@ -2,7 +2,7 @@
 
 import React, { createRef, DragEvent, FormEvent, useState } from 'react'
 import StringToJSX from '@root/ts/stringToJSXParser';
-import useAddDoc from '@root/hooks/useAddDoc';
+import useAddDoc from '@root/hooks/useAdd';
 
 
 export default function AddSkill() {

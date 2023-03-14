@@ -1,0 +1,141 @@
+[33mcommit 394908f29cb0cf2c6d2e0a6d3881fb57eadec7c3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: rickhersd2002 <rickhersd2002@gmail.com>
+Date:   Mon Mar 13 18:59:40 2023 -0400
+
+    remove spinner and draft buttons
+
+[33mcommit 2293fcbd3b8c9960c0106f17bae8e6cd524cc3d7[m
+Author: rickhersd2002 <rickhersd2002@gmail.com>
+Date:   Mon Mar 13 18:44:11 2023 -0400
+
+    remove innecessary files
+
+[33mcommit 4351c921157aa172138d3b520bbcef574c613c55[m
+Author: rickhersd2002 <rickhersd2002@gmail.com>
+Date:   Mon Mar 13 16:32:27 2023 -0400
+
+    first blog version
+
+[33mcommit c50113f0da7db9b80be395de2ac67678c7889c54[m
+Merge: b44707c aad0b35
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Fri Mar 10 19:05:11 2023 -0400
+
+    Merge branch 'master' of https://github.com/Rickhersd/Personal-website
+
+[33mcommit b44707c2a71092cff241ede12c8b33098cfe5175[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Fri Mar 10 19:03:13 2023 -0400
+
+    add Dashboard Styling and RichTextEditor
+
+[33mcommit aad0b357e2d19a30f6e9098e8108ed49e96da4f5[m
+Merge: 72a3faf 6056928
+Author: Ricardo Sánchez <Rickhersd2002@gmail.com>
+Date:   Mon Mar 6 09:04:00 2023 -0400
+
+    Merge pull request #1 from Rickhersd/page/home
+    
+    Page/home
+
+[33mcommit 60569284ba4f2c5c652e847b2d2e75fc0e4c6bb8[m[33m ([m[1;31morigin/page/home[m[33m)[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Mon Mar 6 08:53:28 2023 -0400
+
+    Finished base of home page
+
+[33mcommit 131888ede872141e61b8b1be06240c13bcbe6686[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Thu Mar 2 20:19:34 2023 -0400
+
+    first version of home page
+
+[33mcommit 0aa79047b68d34d2de71e1226f3dff3f318c08b3[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Fri Feb 24 20:35:25 2023 -0400
+
+    Add content about me
+
+[33mcommit 72a3fafcc0207b7ef0f727c929401a637b1e5392[m[33m ([m[1;31morigin/func/navMobile[m[33m)[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Wed Feb 22 21:46:07 2023 -0400
+
+    NavMobile: First Version
+
+[33mcommit 58950ebcdf37402063671c2673b1b7add5dea40e[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Tue Feb 21 15:15:24 2023 -0400
+
+    Contact page
+
+[33mcommit c872f704ea5c5868cb1a5becf4bc2a1c626c0103[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Mon Feb 20 11:13:37 2023 -0400
+
+    3D model and about me
+
+[33mcommit 4e3a7a264b7ede311e03867be6abd38c595fb3dd[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Sat Feb 18 16:19:11 2023 -0400
+
+    add: language button
+
+[33mcommit eba0e82902f06e7e16b8186ae1a42ca76992b774[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Fri Feb 17 18:45:42 2023 -0400
+
+    improve blog section
+
+[33mcommit 3b1bddb299b84f73b6820f1e74fa8873f1418c71[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Thu Feb 16 01:44:01 2023 -0400
+
+    add home page: blog and footer
+
+[33mcommit 1349fdf239c0bd7040c43e0c562dabb4fe62102c[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Wed Feb 15 03:23:31 2023 -0400
+
+    restore then routing crash
+
+[33mcommit 711a078124d8ce477238765acd8ddb72094c8d0e[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Wed Feb 15 01:45:55 2023 -0400
+
+    restore
+
+[33mcommit 03c7f62983a4b3894304da94e9c98a11078a8f6d[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Tue Feb 14 03:29:27 2023 -0400
+
+    Add: middleware and I18i routes*
+
+[33mcommit 301dfad6ff67b033ba9526484ef8e9bc594c1278[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Sat Feb 11 03:25:04 2023 -0400
+
+    Resolve Bugs: subNavContext
+
+[33mcommit c05a03bb353a8ed50feb265a039136b62f734eaa[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Fri Feb 10 02:35:08 2023 -0400
+
+    create: InternalNavContext
+
+[33mcommit 1e734debd89237b09aa87c3d6d514dac8b7b7c07[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Thu Feb 9 23:21:48 2023 -0400
+
+    add next-theme
+
+[33mcommit fa9b5028680b0f462537a539bdbf1bcf1b9a8d7d[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Thu Feb 9 18:44:06 2023 -0400
+
+    Migration Next JS First Commit
+
+[33mcommit 8487dd95f3fa7ced3925e7644405479e53bf4e84[m
+Author: Rickhersd <Rickhersd2002@gmail.com>
+Date:   Sun Feb 5 22:16:13 2023 -0400
+
+    Initial commit from Create Next App

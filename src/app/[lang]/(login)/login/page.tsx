@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, {Suspense} from 'react'
 import Content from './Content';
 
-export default async function page() {
+export default async function Page() {
 
   return (
     <div>

@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <PageWrapper key={'home-page'}> */}
+      <PageWrapper key={'home-page'}>
         <main className="w-full">
           <HeaderSection></HeaderSection>
           <AboutMeResume></AboutMeResume>
@@ -33,7 +33,7 @@ export default function Home() {
             <BlogSection promise={recentArticles}></BlogSection>
           </Suspense>
         </main>
-      {/* </PageWrapper> */}
+      </PageWrapper> 
     </>
   )
 }

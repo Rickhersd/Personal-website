@@ -5,7 +5,6 @@ import ListRender from "../ListRender";
 
 import ServiceDescription from "../ServiceDescription";
 import ButtonService from "../buttons/ServiceButton";
-import IndexContext from "@root/contexts/IndexContext";
 
 import HMTLIcon from "@root/svgs/HTML.svg"
 import ReactIcon from "@root/svgs/React.svg"
@@ -13,12 +12,13 @@ import NextIcon from "@root/svgs/next.svg"
 import TailwindIcon from "@root/svgs/Tailwind.svg"
 import { AnimatePresence } from "framer-motion";
 import AnimateWrapper from "../AnimateWrapper";
+import IndexWrapper from "../IndexWrapper";
 
 export default function BackendService() {
 
   return <>
     <section className="py-20 px-3">
-      <IndexContext>
+      <IndexWrapper>
         <div className="flex flex-col m-auto relative max-w-7xl gap-4 sm:gap-8 sm:grid sm:grid-cols-5 sm:items-center">
           <div className="col-span-5 flex-col flex text-right">
             <h1 className="text-4xl sm:text-5xl text-slate-900 font-bold mt-8 dark:text-zinc-100">Desarrollador Backend</h1>
@@ -62,7 +62,7 @@ export default function BackendService() {
             </AnimateWrapper>
           </div>
         </div>
-      </IndexContext>
+      </IndexWrapper>
     </section>
   </>;
 }
